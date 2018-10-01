@@ -1,0 +1,79 @@
+{
+    "title": "蓝牙检测小程序", 
+    "id": "xcxBlueTest",   
+    "start": 0,   
+    "data": [      
+      {
+        "alt": "开始检测",
+        "pid": 0, 
+        "src": "./img/xcx-blueTest/0.jpg",  
+        "thumb": ""   
+      },
+      {
+        "alt": "搜索跑步机",
+        "pid": 1, 
+        "src": "./img/xcx-blueTest/1.jpg",  
+        "thumb": ""   
+      },
+      {
+        "alt": "未搜索到",
+        "pid": 2, 
+        "src": "./img/xcx-blueTest/2.jpg",  
+        "thumb": ""   
+      },
+      {
+        "alt": "搜索到",
+        "pid": 3, 
+        "src": "./img/xcx-blueTest/3.jpg",  
+        "thumb": ""   
+      },
+      {
+        "alt": "连接跑步机20%-80%",
+        "pid": 4, 
+        "src": "./img/xcx-blueTest/4.jpg",  
+        "thumb": ""   
+      },
+      {
+        "alt": "跑步机出错",
+        "pid": 5, 
+        "src": "./img/xcx-blueTest/5.jpg",  
+        "thumb": ""   
+      },
+      {
+        "alt": "安全锁脱落",
+        "pid": 6, 
+        "src": "./img/xcx-blueTest/6.jpg",  
+        "thumb": ""   
+      },
+      {
+        "alt": "跑步机已暂停",
+        "pid": 7, 
+        "src": "./img/xcx-blueTest/7.jpg",  
+        "thumb": ""   
+      },
+      {
+        "alt": "跑步机正在运行中",
+        "pid": 8, 
+        "src": "./img/xcx-blueTest/8.jpg",  
+        "thumb": ""   
+      },
+      {
+        "alt": "跑步机已休眠",
+        "pid": 9, 
+        "src": "./img/xcx-blueTest/9.jpg",  
+        "thumb": ""   
+      },
+      {
+        "alt": "未通过检测",
+        "pid": 10, 
+        "src": "./img/xcx-blueTest/10.jpg",  
+        "thumb": ""   
+      },
+      {
+        "alt": "跑步机没任何问题",
+        "pid": 11, 
+        "src": "./img/xcx-blueTest/11.jpg",  
+        "thumb": ""   
+      }
+    ]
+  }

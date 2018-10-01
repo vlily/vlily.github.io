@@ -54,8 +54,23 @@
 		<ul class="layui-timeline">
 			<li class="layui-timeline-item">
 				<i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+				<div class="layui-timeline-content layui-text">
+					<h3 class="layui-timeline-title">2018/04-2018/09(小程序)</h3>
+					<p id="layerDemo">
+						<a class="photosBtn" data-method="xcxMdj" href="javascript:;" target="_blank">Gfit运动小程序</a><span class="layui-badge layui-bg-blue">小程序</span>
+						<br><a class="photosBtn" data-method="xcxBlueTest" href="javascript:;" target="_blank">蓝牙检测小程序</a><span class="layui-badge layui-bg-blue">小程序</span>
+					<br><a href="https://gotochitu.com/gfit/index.html" target="_blank">赤兔官网（pc+mobile）</a><span class="layui-badge layui-bg-gray">网站类</span>
+						<br><a class="photosBtn" data-method="gameCanvas" href="javascript:;" target="_blank">一起跑</a><span class="layui-badge">基于canvas的h5</span>
+						<br><a href="https://g.gfitgo.com/marathon/lanzhou/" target="_blank">兰马</a><span class="layui-badge">基于canvas的h5</span>
+						<br><a href="https://g.gfitgo.com/marathon/beijing/index.html" target="_blank">北马</a><span class="layui-badge">基于微信公众号的h5</span>
+						<br><a href="https://g.gfitgo.com/question/" target="_blank">问题反馈等</a><span class="layui-badge">基于video视频的h5</span>
+					</p>
+				</div>
+			</li>
+			<li class="layui-timeline-item">
+				<i class="layui-icon layui-timeline-axis">&#xe63f;</i>
 			    <div class="layui-timeline-content layui-text">
-			      <h3 class="layui-timeline-title">2017/07-现在</h3>
+			      <h3 class="layui-timeline-title">2017/07-2018/04</h3>
 			      <p id="layerDemo">
 			      	<a class="photosBtn" data-method="mUser" href="javascript:;" target="_blank">会员商城</a><span class="layui-badge">基于微信端的会员中心</span>
 			      	<br><a href="http://www.dijingvip.com/" target="_blank">狄净官网</a><span class="layui-badge layui-bg-gray">网站类</span>
@@ -144,6 +159,9 @@
 			    }
 			    if(method=="pcVR"){
 			    	active.showPhotos('./img/pcVR.json');
+				}
+				if(method=="xcxBlueTest"){
+			    	active.showPhotos('./img/xcxBlueTest.json');
 			    }
 			  });
 			// $(".layui-layer-phimg img").on("click",function(){
