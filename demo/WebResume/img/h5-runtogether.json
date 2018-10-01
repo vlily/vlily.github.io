@@ -1,0 +1,19 @@
+{
+  "title": "h5一起跑", 
+  "id": "mCrm",   
+  "start": 0,   
+  "data": [   
+    {
+      "alt": "一起跑",
+      "pid": 0, 
+      "src": "./img/h5-runtogether/1.jpg",  
+      "thumb": ""   
+    },   
+    {
+      "alt": "已完成",
+      "pid": 1, 
+      "src": "./img/h5-runtogether/2.jpg",  
+      "thumb": ""   
+    }
+  ]
+}

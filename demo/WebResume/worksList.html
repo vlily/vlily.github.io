@@ -60,7 +60,7 @@
 						<a class="photosBtn" data-method="xcxMdj" href="javascript:;" target="_blank">Gfit运动小程序</a><span class="layui-badge layui-bg-blue">小程序</span>
 						<br><a class="photosBtn" data-method="xcxBlueTest" href="javascript:;" target="_blank">蓝牙检测小程序（未上线）</a><span class="layui-badge layui-bg-blue">小程序</span>
 					<br><a href="https://gotochitu.com/gfit/index.html" target="_blank">赤兔官网（pc+mobile）</a><span class="layui-badge layui-bg-gray">网站类</span>
-						<br><a href="https://g.gfitgo.com/runTogether/" target="_blank">一起跑</a><span class="layui-badge">基于canvas的h5</span>
+						<br><a class="photosBtn" data-method="h5-runtogether" href="javascript:;" target="_blank">一起跑</a><span class="layui-badge">基于canvas的h5</span>
 						<br><a href="https://g.gfitgo.com/marathon/lanzhou/" target="_blank">兰马</a><span class="layui-badge">基于canvas的h5</span>
 						<br><a href="https://g.gfitgo.com/marathon/beijing/index.html" target="_blank">北马</a><span class="layui-badge">基于微信公众号的h5</span>
 						<br><a href="https://g.gfitgo.com/question/" target="_blank">问题反馈等</a><span class="layui-badge">基于video视频的h5</span>
@@ -162,7 +162,11 @@
 				}
 				if(method=="xcxBlueTest"){
 			    	active.showPhotos('./img/xcxBlueTest.json');
-			    }
+				}
+				if(method=="h5-runtogether"){
+			    	active.showPhotos('./img/h5-runtogether.json');
+				}
+				
 			  });
 			// $(".layui-layer-phimg img").on("click",function(){
 			// 	console.log(124)
