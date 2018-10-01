@@ -1,12 +1,232 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>demo</title>
-</head>
-<body>
 
-<h1>i love you</h1>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>v-wander 不止于思考</title>
+
+    <meta name="keywords" content="前端开发 实践 总结 html css js jquery bootstrap vue vuethink react php 自适应 兼容">
+    <meta name="description" content="v-wander是一个基于前端实践而总结出的各种问题的解决办法，只有更好没有最好，集工作和生活爱好于一体的自主化平台">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <link rel="shortcut icon" href="favicon.ico"> 
+    <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
+    <link href="./css/swiper.min.css" rel="stylesheet">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?8e8e23264f3d4cdffe058bfc71bc88e3";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body class="fixed-sidebar full-height-layout gray-bg fixed-nav" style="overflow:hidden">
+    <div id="wrapper">
+        <!--左侧导航开始-->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="nav-close"><i class="fa fa-times-circle"></i>
+            </div>
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a class="J_menuItem" href="index_v1.html">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">主页</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-magic"></i>
+                            <span class="nav-label">前端</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level webListLeft">
+                            <li>
+                                <a class="J_menuItem" href="webFront.html">html+css</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="webJs.html">js(jquery)</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="webcase.html">框架案例</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-cutlery"></i>
+                            <span class="nav-label">后台</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level phpListLeft">
+                            <li>
+                                <a class="J_menuItem" href="webPhp.html">php</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="webMysql.html">mysql</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="webVr.html"><i class="fa fa-tripadvisor"></i><span class="nav-label">webVR</span></a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="originality.html"><i class="fa fa-tripadvisor"></i><span class="nav-label">创意</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--左侧导航结束-->
+        <!--移动端底部导航开始-->
+        <nav class="navbar navbar-default-bottom navbar-fixed-bottom" role="navigation">
+            <div class="navbar-collapse container-fluid" id="navbar" >
+                <ul class="nav navbar-nav">
+                    <li id="dropup_menu" >
+                        <a class="J_menuItem home" href="index_v1.html">主页</a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem webFront" href="webFront.html">前端</a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem webPhp" href="webPhp.html"> <span>后台</span></a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem webVR" href="webVr.html"> webVR </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem create" href="originality.html">创意</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--移动端底部导航结束-->
+        <!--右侧部分开始-->
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <!-- 头部滚动部分 -->
+            <div id="topNav" class="swiper-container" style="display: none;">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><span><a class="J_menuItem" href="webFront.html">html+css</a></span></div>
+                <div class="swiper-slide"><span><a class="J_menuItem" href="webJs.html">js(jquery)</a></span></div>
+                <div class="swiper-slide"><span><a class="J_menuItem" href="webcase.html">框架案例</a></span></div>
+              </div>
+            </div>
+            <div class="row content-tabs">
+                <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i>
+                </button>
+                <nav class="page-tabs J_menuTabs">
+                    <div class="page-tabs-content">
+                        <a href="javascript:;" class="active J_menuTab" data-id="index_v1.html">首页</a>
+                    </div>
+                </nav>
+                <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
+                </button>
+                <div class="btn-group roll-nav roll-right">
+                    <button class="dropdown J_tabClose" data-toggle="dropdown">关闭操作<span class="caret"></span>
+
+                    </button>
+                    <ul role="menu" class="dropdown-menu dropdown-menu-right">
+                        <li class="J_tabShowActive"><a>定位当前选项卡</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="J_tabCloseAll"><a>关闭全部选项卡</a>
+                        </li>
+                        <li class="J_tabCloseOther"><a>关闭其他选项卡</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 空白</a>
+            </div>
+            <!-- 中间iframe，当前显示 -->
+            <div class="row J_mainContent" id="content-main">
+                <iframe class="J_iframe" name="iframe0" width="100%" height="99.6%" src="index_v1.html?v=4.0" frameborder="0" data-id="index_v1.html" seamless></iframe>
+            </div>
+
+            <!-- 底部公共部分 -->
+            <div class="footer">
+                <p class="fixed_full">&copy; 2017 wanderyun <a href="http://www.zi-han.net/" target="_blank"></a>
+                </p>
+            </div>
+
+        </div>
+        <!--右侧部分结束-->
+        <div style="display: inline-block;width: 100%;height: 100px;display: inline-block;"></div>
+    </div>
+
+    <!-- 全局js -->
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- <script src="js/plugins/layer/layer.min.js"></script> -->
+    <script src="./js/swiper.min.js"></script>
+
+    <!-- 自定义js -->
+    <script src="js/hplus.js?v=4.1.0"></script>
+    <script type="text/javascript" src="js/contabs.js"></script>
+    <script src="./js/public.js"></script>
+
+    <!-- 第三方插件 -->
+    <!-- <script src="js/plugins/pace/pace.min.js"></script> -->
+
+    <script> 
+        $(function(){
+            // 设置浏览器导航栏隐藏
+            setTimeout(function() { 
+                // window.scrollTo(0, 800);
+                console.log("老铁");
+                console.log("等");
+                console.log("你");
+                console.log("好");
+                console.log("久");
+                console.log("了");
+                console.log("公众号：wander_yun");   
+            }, 0);
+            // 移动端导航点击下拉列表一会后，该下拉列表自动消失
+            $('.dropdown-menu_my li a').click(function(){
+                setTimeout(function(){
+                    if($(".dropup_menu_li").attr("class").indexOf(" open")>0){
+                        console.log(123)
+                        $(".dropup_menu_li").removeClass(" open")
+                        $(this).attr("aria-expanded","false")
+                    }
+                },300)
+            })
+            $("#content-main").css({
+                "overflow-y":"hidden",
+            })
+            $('#control_nav').click(function(){
+
+                $('.fixed-nav #wrapper').css({
+                    "padding-top":"0px",
+                })
+                $('.navbar-fixed-top').fadeOut();
+            })
+            $("#topNav .swiper-slide").click(function(){
+                // if($(this).attr())
+                console.log(this)
+                $(this).addClass('active');
+            })
+            // $("#topNav .active").removeClass('active')
+
+            //     $("#topNav .swiper-slide").eq(swiper.clickedIndex).addClass('active')
+        })
+                
+
+    </script>
 
 </body>
+
 </html>

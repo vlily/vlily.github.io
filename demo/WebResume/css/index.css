@@ -1,0 +1,30 @@
+*{margin: 0;padding: 0;}
+/*简历*/
+.layui-table td, .layui-table th, .layui-table-header, .layui-table-tool, .layui-table-view, .layui-table[lay-skin=line], .layui-table[lay-skin=row] {
+    border: 1px solid rgb(102,153,153);
+}
+.table-wapper{width: 70%;padding-left: 20px;position: relative;}
+.download-btn{width: 25px;background: rgba(0,0,0,.2);position: fixed;top: 10%;right: 23%;border-radius: 10px;padding: 5px 10px}
+.layui-table{background: rgb(243,243,243)}
+table tr>td:nth-child(2n+1){background: #ddd;font-weight: 900;text-align: center;min-width: 80px;}
+table tr>td:nth-child(2n){min-width: 140px;}
+ul{margin-left: 10px;}
+li {list-style: disc; padding: 3px;}
+h3{font-weight: 900;font-size: 16px;padding: 5px 0;}
+a {color: rgb(0,102,204);text-decoration: none;}
+a:hover{color: rgb(0,100,160);text-decoration: underline;}
+.layui-table img {max-width: 140px;width: 100%;}
+@media only screen and (max-device-width: 500px) {
+	p,a,span,tr{font-size: 16px;}
+	.table-wapper{width: 100%;padding-left: 0px;position: relative;}
+	h3{font-weight: 900;padding: 5px 0;font-size: 24px;}
+	a{display: inline-block;font-size: 26px;line-height:30px;}
+	.wapper{width: 90%;margin: 24px auto;}
+	ul{padding-left: 10px;}
+	table tr>td:nth-child(2n+1){font-size: 14px;font-weight: 900}
+	table tr>td:nth-child(2n){font-size: 14px}
+	.download-btn{display: none;}
+	.layui-table td h3{font-size:14px;}
+	li,.tdMobile{font-size:12px!important;}
+	.size{font-size:10px!important;}
+}

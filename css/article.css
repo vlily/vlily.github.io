@@ -1,0 +1,37 @@
+.nav_article{padding:5px;border-bottom: 1px solid #ccc;}
+.layui-icon{font-size: 24px;}
+h3{font-size: 16px;font-weight: 600!important;color:#000;padding: 10px 0;}
+.react_img{width: 80%;}
+.link_style{color: red;transition: .5s ease-in;}
+.link_style:hover{color: red;font-size: 13.5px;text-decoration:underline;}
+p{cursor: pointer;}
+.react_show{margin: 10px 0;}
+a:focus, a:hover {
+    color: red!important;
+}
+.article{
+	margin:0 20px;
+}
+
+.article .articleLabel{
+	font-size: 20px;
+	padding: 20px 0;
+	color: #f8ac59;
+	font-weight: 900;
+}
+.rpxInfor{
+	font-size: 16px;
+	color: #aaa;
+	font-weight: normal;
+}
+.article .layui-input{
+	width: 200px;
+	height: 56px;
+    font-size: 28px;
+	display: inline-block;
+	margin-bottom: 10px;
+	border:4px solid #ccc;
+}
+.red{
+	color: red;
+}

@@ -1,0 +1,18 @@
+{
+  "title": "mobile端crm", 
+  "id": "mCrm",   
+  "start": 0,   
+  "data": [      
+    {
+      "alt": "login",
+      "pid": 0, 
+      "src": "./img/pc-play/0.png",  
+      "thumb": ""   
+    },{
+      "alt": "主页",
+      "pid": 1, 
+      "src": "./img/pc-play/1.png",
+      "thumb": "" 
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>超级万能表格表头左右滚动上下固定</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="../layui/css/layui.css" rel="stylesheet">
+    <!-- <link href="../layui/css/layui.mobile.css" rel="stylesheet"> -->
+    <link href="../css/article.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/nativeShare.css"/>
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content  animated fadeInRight">
+        <nav class="nav_article clear">
+            <a class="return_page" href="javascript:;"><i class="layui-icon">&#xe65c;</i></a>
+            <a class="share_button" style="float: right;" href="javascript:;"><i class="layui-icon">&#xe641;</i></a>
+        </nav>
+        <article>
+            <h3>超级万能表格表头左右滚动上下固定</h3>
+            <section class="react_show">
+                <p>效果展示</p>
+                <img class="react_img" src="../img/super_table.PNG" alt="">
+            </section>
+            <section class="react_show">
+                <p>demo效果查看：</p>
+                <a class="link_style" target="_blank" href="http://www.wanderyun.com/demo/supertable.html">超级万能表格表头左右滚动上下固定</a>
+            </section>
+            <section class="react_show">
+                <p>demo链接下载(喜欢就送颗真心撒)：</p>
+                <a class="link_style" target="_blank" href="https://github.com/vlily/shareDemo/blob/master/superTable.html">超级万能表格表头左右滚动上下固定</a>
+            </section>
+            <section class="code_infor">
+            <!-- 代码编辑器 -->
+            <pre class="layui-code layui-code layui-box layui-code-view" lay-title="html代码" lay-encode="false">
+<div id="headerDiv_id" class="headerDiv_id" style="position:relative;z-index: 0;overflow: hidden"></div>
+<div id="bodyDiv_id" class="table_wapper" style="width:500px;overflow:scroll;" >
+  <table id="table_id" class="gridTable">
+    <thead class="gridTableHead">
+      <tr>
+        <th>姓名</th>
+        <th>小名</th>
+        <th>年龄</th>
+        <th>学历</th>
+        <th>毕业学校</th>
+        <th>学历</th>
+        <th>理想抱负与现实</th>
+        <th>理想抱负与现实</th>
+        <th>理想抱负与现实</th>
+        <th>理想抱负与现实</th>
+        <th>理想抱负与现实</th>
+        <th>理想抱负与现实</th>
+      </tr>
+      <tr class="tfoot">
+        <th>总计</th>
+        <th>10000</th>
+        <th>4pm</th>
+        <th>学历</th>
+        <th>毕业学校</th>
+        <th>学历</th>
+        <th>理想抱负与现实</th>
+        <th>理想抱负与现实</th>
+        <th>理想抱负与现实</th>
+        <th>理想抱负与现实</th>
+        <th>理想抱负与现实</th>
+        <th>理想抱负与现实</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>lily</td>
+        <td>lily</td>
+        <td>lily</td>
+        <td>lily</td>
+        <td>神奇女侠</td>
+        <td>博士后</td>
+        <td>wander_yun</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+      </tr>
+      <tr>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+      </tr>
+      <tr>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+      </tr>
+      <tr>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+      </tr>
+      <tr>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+      </tr>
+      <tr>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+        <td>维护世界和平</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+            </pre>   
+            <pre class="layui-code layui-code layui-box layui-code-view" lay-title="css代码" lay-encode="false">
+.gridTable{table-layout:fixed;border-collapse: collapse;border: solid 1px #d0d0d0;cursor: pointer;}
+.gridTable{table-layout:fixed;border-collapse: collapse;border: solid 1px #d0d0d0;box-sizing: border-box;}
+.gridTable tbody tr:hover{background: #e4f5ff;}
+.gridTable tbody tr:nth-child(2n){background-color: #F8F8F8;}
+.gridTable .tfoot th{background-color: #dcdcdc;}
+.gridTable th{height:25px;text-align:center;border-style: solid;border-width: 0 1px 1px 1px;border-left-color: #EEE !important;border-right-color: #d0d0d0 !important;border-color: #d0d0d0 !important;background: #f0eff0;box-sizing: border-box;min-width: 50px;padding: 0 3px;}
+.gridTable th,.gridTable td{font-weight: normal;font-size: 12px;color: #676a6c;}
+.gridTable th:nth-child(1){min-width: 80px;}
+.gridTable td{height:23px;text-align:center;border-color: #ededed;font-weight: normal;border-right: solid 1px #ededed;border-bottom: solid 1px #ededed;vertical-align: middle;box-sizing: border-box;min-width: 55px;padding: 0 3px;}
+.gridTable tfoot tr{background: #dcdcdc;}
+.pageHeader{height: auto;}
+            </pre>   
+            <pre class="layui-code layui-code layui-box layui-code-view" lay-title="js代码" lay-encode="false">
+$(document).ready(function() {
+    tableplus($('.headerDiv_id'),$(".table_wapper"),200);
+});
+// 表格原理：整体分为head和body，复制table的thead放到head中（要复制高度和宽度），让head随table一起滚动，其实都是假象。
+function tableplus(head,body,bodyH){
+    $(body).find(".gridTable tbody tr").click(function(){
+        $(this).css("background","#7cc5e5").siblings().css("background","");
+    })
+    var cloneTable = $(body).find(".gridTable").clone();//复制内容表格作为头部
+    var gridTable=$(body).find(".gridTableHead").height();
+    var headerDivWidth=$(body).width();//有时需去掉滚动条的宽度17就是固定头部div的宽度
+    $(head).append(cloneTable[0]);//放到头部div中
+    $(body).css("height",bodyH);
+    $(head).css({
+        "width":headerDivWidth,
+        "height":gridTable,
+        "margin-bottom":'-'+gridTable+"px",
+    });
+    $(body).scroll(function(){
+        $(head).scrollLeft($(this).scrollLeft());
+    })
+}
+            </pre>   
+            <!-- 代码编辑器完 -->
+            </section>
+        </article>
+        <!-- 分享 -->
+        <div id="nativeShare"></div>
+    </div>
+</body>
+<!-- 全局js -->
+    <script src="../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../layui/layui.all.js"></script>
+    <script src="../js/nativeShare.js"></script>
+    <script src="../js/public.js"></script>
+    <!-- 自定义js -->
+<script>
+    $(function(){
+        layui.use("code",function(){
+            layui.code({
+                encode: true,
+            });
+        })
+        $(".return_page").click(function(){
+            history.go(-1);
+        })
+        // var config = {
+        //     url:'http://blog.wangjunfeng.com',
+        //     title:'王俊锋的个人博客',
+        //     desc:'王俊锋的个人博客',
+        //     img:'http://www.wangjunfeng.com/img/face.jpg',
+        //     img_title:'王俊锋的个人博客',
+        //     from:'王俊锋的博客'
+        // };
+        // var share_obj = new nativeShare('nativeShare',config);
+    // $(window).on("pageshow",function(e){
+    // // 判断，如果存在我缓存的页面，则读取
+    // if(!e.persisted){
+    // _this.readFromPage();
+    // }
+    // })
+    // $(window).on("pagehide",function(e){
+    // // 如果没有页面缓存，我来缓存
+    // if(!e.persisted){
+    //  // 判断url是否是我需要的页面，然后读取。
+    // _this.cachePage();
+    // }
+    // })
+    })
+</script>
+</html>

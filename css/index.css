@@ -1,0 +1,186 @@
+/*12栅格布局重写*/
+.layui-col-xs12,.layui-col-xs8{
+    width: auto;
+}
+@media screen and (max-width: 450px){
+    .layui-col-xs12 {
+        width: 100%;
+    }
+    .layui-col-xs8{
+        width:66.66666667%;
+    }
+}
+/*input 改写*/
+@media screen and (max-width: 450px){
+    .layui-form-item .layui-input-inline {
+        display: block;
+        float: none;
+        left: -3px;
+        width: auto;
+        margin: 0;
+    }
+}
+@media screen and (max-width: 992px){
+    .layui-form-item .layui-input-inline {
+        display: block;
+        float: none;
+        left: -3px;
+        width: auto;
+        margin: 0;
+    }
+    .box-center-phone{
+        display: inline-block;
+        text-align: center;
+    }
+    .box-left-phone{
+        display: inline-block;
+        text-align: left;
+    }
+
+}
+
+.layui-input, .layui-select, .layui-textarea{
+    font-size: 12px;
+    height: 26px;
+    border-color: #a2bac0 #b8d0d6 #b8d0d6 #a2bac0;
+}
+.layui-form-item {
+    margin-bottom:3px;
+    clear: both;
+}
+.layui-form-item .layui-input-inline {
+    float: left;
+    width: 130px;
+    margin-right: 10px;
+}
+.middle-font{
+    display: inline-block;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    height: 26px;
+    line-height: 26px;
+}
+.layui-form-select .layui-input {
+    padding-right: 0px; 
+    cursor: pointer;
+}
+.layui-btn+.layui-btn {
+    margin-left: 5px;
+}
+.layui-form-label {
+    padding: 3px 0px 0 5px;
+    width: auto;
+}
+/*wx table*/
+.layui-table-view .layui-table td,.layui-table-view .layui-table th {
+    position: relative;
+    padding: 0px;
+    min-height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+}
+.layui-table-cell {
+    height: 20px;
+    line-height: 20px;
+    padding: 0 5px;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.layui-laypage select {
+    height: 22px;
+     padding:0 3px; 
+    border-radius: 2px;
+    cursor: pointer;
+}
+.layui-form-checkbox[lay-skin=primary] span {
+    color: #f00;
+}
+
+/*public style*/
+.page-head,.page-panel{
+    padding: 5px 0;
+    border: 1px solid #b8d0d6;
+}
+.page-head{
+    margin: 5px;
+    background-color: rgb(235,240,245);
+}
+.page-panel{
+    margin: 0px 5px 5px 5px;
+    background-color: rgb(234,241,242);
+}
+.box-center{
+    display: inline-block;
+    text-align: center;
+}
+.panel-infor{
+    display: inline-block;
+}
+.panel-value{
+    color: red;
+}
+.contextmenu{
+    display: none;
+}
+.dropdown-menu li {
+     display: block; 
+    color: #ccc;
+}
+.alert-gray{
+    padding: 5px;
+}
+fieldset {
+    border-width: 1px;
+    border-style: dotted;
+    border-color: #b8d0d6;
+}
+legend{
+    font-size: 12px;
+    font-weight: 600;
+}
+dt,dl{
+    font-size: 10px;
+    font-family: "微软雅黑";
+    padding: 5px 0;
+}
+.long_name{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.mdj{
+    margin-bottom: 5px;
+}
+.colorRed{
+    color: #f00;
+    font-weight: bolder;
+}
+/*弹窗*/
+.layui-layer-iframe .layui-layer-title{
+    font-weight: 900;
+    background-color: rgb(228,236,238);
+    border-bottom: 1px solid #b8d0d6;
+}
+.order-money{
+    margin-top: 10px;
+}
+.order-label{
+    width: 70px;
+    text-align: left;
+}
+.remark-font{
+    color: #aaa;
+    display: inline-block;
+    padding-left:5px;
+}
+.order-infor{
+    height: 362px;
+    overflow: auto;
+}
+/*.layui-layer-content {
+    position: relative;
+    height: 646px;
+}*/

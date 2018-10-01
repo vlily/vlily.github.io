@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最简单清晰的纯css实现的单选框radio复选框checkbox自定义样式</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="../layui/css/layui.css" rel="stylesheet">
+    <!-- <link href="../layui/css/layui.mobile.css" rel="stylesheet"> -->
+    <link href="../css/article.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/nativeShare.css"/>
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content  animated fadeInRight">
+        <nav class="nav_article clear">
+            <a class="return_page" href="javascript:;"><i class="layui-icon">&#xe65c;</i></a>
+            <a class="share_button" style="float: right;" href="javascript:;"><i class="layui-icon">&#xe641;</i></a>
+        </nav>
+        <article>
+            <h3>最简单清晰的纯css实现的单选框radio复选框checkbox自定义样式</h3>
+            <section class="react_show">
+                <p>效果展示</p>
+                <img class="react_img" src="../img/sample_radio.png" alt="">
+            </section>
+            <section class="react_show">
+                <p>demo链接下载(喜欢就送颗真心撒)：</p>
+                <a class="link_style" target="_blank" href="https://github.com/vlily/share/blob/master/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%95%E9%80%89%E6%A1%86%E5%A4%8D%E9%80%89%E6%A1%86%E6%A0%B7%E5%BC%8F.html">自定义单选框radio复选框checkbox</a>
+            </section>
+            <section class="code_infor">
+            <!-- 代码编辑器 -->
+            <pre class="layui-code layui-code layui-box layui-code-view" lay-title="html代码" lay-encode="false">
+<fieldset>
+    <legend style="color: red;">自定义单选框radio</legend>
+    <div class="login_agree">
+        <input type="radio" id="agree_btn">
+        <label for="agree_btn"  class="input_agree" style="width: 36%;">同意XXX协议</label>
+    </div>
+</fieldset>
+<fieldset>
+   <legend style="color: red;">自定义复选框checkbox</legend>
+   <div class="sex_checkbox">
+        <input type="checkbox" checked="" id="sex_male" value="1" name="sex"><label for="sex_male">男</label>
+        <input type="checkbox" id="sex_female" value="0" name="sex"><label for="sex_female">女</label>
+   </div>
+</fieldset>
+            </pre>
+            <pre class="layui-code layui-code layui-box layui-code-view" lay-title="css代码" lay-encode="false">
+/*公共部分——按钮样式*/
+label::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #EEE;
+    vertical-align: middle;
+    -webkit-border-radius: 50%;
+    margin-right: 10px;
+    -webkit-box-sizing:border-box;
+  -webkit-transition:background ease-in .5s
+}
+input[type="checkbox"]:checked+label::before{
+    background-color: #6399ae;
+    border: 2px #b3b3b3 solid;
+}
+/*自定义单选框radio样式*/
+.login_agree {
+    position: relative;
+}
+.login_agree input[type="radio"]{
+    display: none;
+}
+.login_agree input[type="radio"]:checked+label::before{
+    background-color: #f4d345;
+    border: 4px #ccc solid;
+}
+/*自定义复选框checkbox*/
+.sex_checkbox{
+    position: relative;
+}
+.sex_checkbox input[type="checkbox"]{
+    display: none;
+}
+            </pre>   
+            <pre class="layui-code layui-code layui-box layui-code-view" lay-title="jquery代码" lay-encode="false">
+/*自定义复选框checkbox需要用js控制，二者只可选择其一*/
+$('.sex_checkbox').find('input[type=checkbox]').bind('click', function(){
+    $('.sex_checkbox').find('input[type=checkbox]').not(this).attr("checked", false);
+});
+            </pre>   
+            <!-- 代码编辑器完 -->
+            </section>
+        </article>
+        <!-- 分享 -->
+        <div id="nativeShare"></div>
+    </div>
+</body>
+<!-- 全局js -->
+    <script src="../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../layui/layui.all.js"></script>
+    <script src="../js/nativeShare.js"></script>
+    <script src="../js/public.js"></script>
+    <!-- 自定义js -->
+<script>
+    $(function(){
+        layui.use("code",function(){
+            layui.code({
+                encode: true,
+            });
+        })
+        $(".return_page").click(function(){
+            history.go(-1);
+        })
+        // var config = {
+        //     url:'http://blog.wangjunfeng.com',
+        //     title:'王俊锋的个人博客',
+        //     desc:'王俊锋的个人博客',
+        //     img:'http://www.wangjunfeng.com/img/face.jpg',
+        //     img_title:'王俊锋的个人博客',
+        //     from:'王俊锋的博客'
+        // };
+        // var share_obj = new nativeShare('nativeShare',config);
+    // $(window).on("pageshow",function(e){
+    // // 判断，如果存在我缓存的页面，则读取
+    // if(!e.persisted){
+    // _this.readFromPage();
+    // }
+    // })
+    // $(window).on("pagehide",function(e){
+    // // 如果没有页面缓存，我来缓存
+    // if(!e.persisted){
+    //  // 判断url是否是我需要的页面，然后读取。
+    // _this.cachePage();
+    // }
+    // })
+    })
+</script>
+</html>
