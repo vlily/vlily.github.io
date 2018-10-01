@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marquee插件水平滚动字幕循环滚动</title>
+    <meta name="keywords" content="v-wander后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="v-wander是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="../layui/css/layui.css" rel="stylesheet">
+    <!-- <link href="../layui/css/layui.mobile.css" rel="stylesheet"> -->
+    <link href="../css/article.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/nativeShare.css"/>
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content  animated fadeInRight">
+        <nav class="nav_article clear">
+            <a class="return_page" href="javascript:;"><i class="layui-icon">&#xe65c;</i></a>
+            <a class="share_button" style="float: right;" href="javascript:;"><i class="layui-icon">&#xe641;</i></a>
+        </nav>
+        <article>
+            <h3>marquee插件水平滚动字幕循环滚动</h3>
+            <section class="react_show">
+                <p>效果展示</p>
+                <img class="react_img" src="../img/marquee.png" alt="">
+            </section>
+            <section class="react_show">
+                <p>demo链接下载(喜欢就送颗真心撒)：</p>
+                <a class="link_style" target="_blank" href="https://github.com/vlily/share/tree/master/%E6%B0%B4%E5%B9%B3%E6%BB%9A%E5%8A%A8%E5%AD%97%E5%B9%95%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8">marquee插件水平滚动字幕循环滚动</a>
+            </section>
+            <section class="code_infor">
+            <!-- 代码编辑器 -->
+            <pre class="layui-code layui-code layui-box layui-code-view" lay-title="html代码" lay-encode="false">
+<section class="scroll-bar" id="scrollText">
+    <ul id="marquee">
+        <li>13*****3632&nbsp抽取积分1000分</li>
+    </ul>
+</section>
+            </pre>
+            <pre class="layui-code layui-code layui-box layui-code-view" lay-title="css代码" lay-encode="false">
+.scroll-bar {
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    font-size: 16px;
+    background: #ccc;
+}
+#marquee{
+    margin: 0;
+    padding: 0;
+}
+#marquee li{
+    display: inline-block;
+}
+            </pre>   
+            <pre class="layui-code layui-code layui-box layui-code-view" lay-title="js(jquery)代码" lay-encode="false">
+//记得调用jquery和插件（有链接。自行下载）
+$(function(){
+    $("#marquee").marquee({
+        duration: 10000,//时间
+        gap: 100,//间距
+        delayBeforeStart: 0,//开始滚动延迟时间
+        direction: 'left',//滚动方向
+        duplicated: true,//是否循环播放
+    }); 
+})
+            </pre>   
+            <!-- 代码编辑器完 -->
+            </section>
+        </article>
+        <!-- 分享 -->
+        <div id="nativeShare"></div>
+    </div>
+</body>
+<!-- 全局js -->
+    <script src="../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../layui/layui.all.js"></script>
+    <script src="../js/nativeShare.js"></script>
+    <script src="../js/public.js"></script>
+    <!-- 自定义js -->
+<script>
+    $(function(){
+        layui.use("code",function(){
+            layui.code({
+                encode: true,
+            });
+        })
+        $(".return_page").click(function(){
+            history.go(-1);
+        })
+        // var config = {
+        //     url:'http://blog.wangjunfeng.com',
+        //     title:'王俊锋的个人博客',
+        //     desc:'王俊锋的个人博客',
+        //     img:'http://www.wangjunfeng.com/img/face.jpg',
+        //     img_title:'王俊锋的个人博客',
+        //     from:'王俊锋的博客'
+        // };
+        // var share_obj = new nativeShare('nativeShare',config);
+    // $(window).on("pageshow",function(e){
+    // // 判断，如果存在我缓存的页面，则读取
+    // if(!e.persisted){
+    // _this.readFromPage();
+    // }
+    // })
+    // $(window).on("pagehide",function(e){
+    // // 如果没有页面缓存，我来缓存
+    // if(!e.persisted){
+    //  // 判断url是否是我需要的页面，然后读取。
+    // _this.cachePage();
+    // }
+    // })
+    })
+</script>
+</html>

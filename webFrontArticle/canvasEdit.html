@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>canvas自定义编辑器</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="../layui/css/layui.css" rel="stylesheet">
+    <!-- <link href="../layui/css/layui.mobile.css" rel="stylesheet"> -->
+    <link href="../css/article.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/nativeShare.css"/>
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content  animated fadeInRight">
+        <nav class="nav_article clear">
+            <a class="return_page" href="javascript:;"><i class="layui-icon">&#xe65c;</i></a>
+            <a class="share_button" style="float: right;" href="javascript:;"><i class="layui-icon">&#xe641;</i></a>
+        </nav>
+        <article>
+            <h3>canvas自定义编辑器</h3>
+            <section class="react_show">
+                <p>效果展示</p>
+                <img class="react_img" src="../img/canvas_edit.jpg" alt="">
+            </section>
+            <section class="react_show">
+                <p>demo链接下载(喜欢就送颗真心撒)：</p>
+                <a class="link_style" target="_blank" href="http://download.csdn.net/detail/vlilyv/9871035">canvas自定义编辑器</a>
+            </section>
+            <section class="code_infor">
+            <!-- 代码编辑器 -->
+            <pre class="layui-code layui-code layui-box layui-code-view" lay-title="html代码" lay-encode="false">
+<div class="content" >
+    <video id="video" >
+        <source src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" type="">
+        <source src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" type="">
+    </video>
+    <div class="customCon">
+        <a href="javascript:;" class="stopToP" style="display: block;" ></a>
+        <a href="javascript:;" class="playToS" style="display: none;" ></a>
+        <div class="progressBox">
+            <div class="progressVideo">
+            <div class="overVideo">
+                <span></span>
+            </div>
+            </div>
+        </div>
+        <div class="overTime">00:00</div>
+        <span class="spTime" >/</span>
+        <div class="allTime">01:29</div>
+        <div class="progressBox2">
+            <div class="progressAudio">
+            <div class="overAudio">
+                <span></span>
+            </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="fullScreen"></a>
+    </div>
+</div>
+            </pre>   
+            <pre class="layui-code layui-code layui-box layui-code-view" lay-title="css代码" lay-encode="false">
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    width: 100%;
+    background: rgb(69,63,63);
+}
+.content{
+    width: 500px;
+    /*border: 6px solid red;*/
+    margin: 0 auto;
+}
+video{
+    width: 500px;
+    float: left;
+}
+.customCon{
+    box-sizing: border-box;
+    width: 500px;
+    height: 45px;
+    border-top: 2px solid rgb(69,63,63);
+    background: rgb(234,234,234);
+    float: left;
+    position: relative;
+}
+.stopToP,.playToS{
+    float: left;
+    width: 40px;
+    height: 40px;
+    /*border: 1px solid red;*/
+}
+.customCon a:nth-child(1){
+    background: url(../images/sprite.png) no-repeat 0px 4px;
+    display: block;
+
+}
+.customCon a:nth-child(2){
+    background: url(../images/sprite.png) no-repeat -40px 4px;
+    display: none;
+}
+.progressBox{
+    width: 250px;
+    height: 9px;
+    line-height: 20px;
+    /*border:1px solid red;*/
+    background: #706d6d;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    margin-top: 18px;
+    float: left;
+    box-shadow:inset 0px 1px 4px rgba(0,0,0,0.4),0px 1px 0px rgba(255,255,255,0.4);
+    -webkit-box-shadow:inset 0px 1px 4px rgba(0,0,0,0.4),0px 1px 0px rgba(255,255,255,0.4);
+    -moz-box-shadow:inset 0px 1px 4px rgba(0,0,0,0.4),0px 1px 0px rgba(255,255,255,0.4);
+}
+/*记得宽度都要用 %来表示,且给子元素定位时，
+一定要给确认的父元素加position: relative;，因为它的%宽度会和父元素的一样
+,注意要减去按钮本身的宽度*/
+.progressVideo{
+    width: 97%;
+    height: 9px;
+    /*border:1px solid red;*/
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.overVideo{
+    width: 0%;
+    height: 9px;
+    display: inline-block;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    background: url(../images/play-bar.png) repeat-x;
+    position: absolute;
+
+}
+.overVideo span{
+    /*border:1px solid red;*/
+    width: 16px;
+    height: 16px;
+    background: url(../images/handle.png) no-repeat;
+    position: absolute;
+    top: -3px;
+    right: -10px;
+
+}
+.overTime,.allTime,.spTime{
+    float: left;
+    color: rgb(102,107,77);
+    font-size: 13px;
+    /*border:1px solid red;*/
+    margin-top: 13px;
+}
+.overTime{
+    margin-left: 5px;
+}
+.allTime{
+    margin-right: 5px;
+}
+.spTime{
+    font-size: 12px;
+    margin:12px 5px 0 5px; 
+}
+
+.progressBox2{
+    float: left;
+    width: 80px;
+    height: 9px;
+    background: rgb(112,109,109);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    cursor: pointer;
+    margin-top: 17px;
+
+    /*border:1px solid blue;*/
+    box-shadow:inset 0px 1px 4px rgba(0,0,0,0.4),0px 1px 0px rgba(255,255,255,0.4);
+    -webkit-box-shadow:inset 0px 1px 4px rgba(0,0,0,0.4),0px 1px 0px rgba(255,255,255,0.4);
+    -moz-box-shadow:inset 0px 1px 4px rgba(0,0,0,0.4),0px 1px 0px rgba(255,255,255,0.4);
+}
+.progressAudio{
+    /*border:1px solid red;*/
+    width: 89%;
+    height: 9px;
+    position: relative;
+}
+.overAudio{
+    /*border:1px solid red;*/
+    width: 50%;
+    height: 9px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    background: rgb(112,109,109);
+    display: inline-block;
+    position: absolute;
+}
+.progressAudio span{
+    /*display: inline-block;*/
+    /*border:1px solid red;*/
+    width: 10px;
+    height: 9px;
+    background: url(../images/volume.png) no-repeat;
+    position: absolute;
+    top: 0px;
+    right: -9px; 
+
+}
+.fullScreen{
+    float: left;
+    width: 20px;
+    height: 20px;
+    /*border:1px solid red;*/
+    background: url(../images/sprite.png) no-repeat -160px -8px;
+    margin: 10px 0 0 10px;
+}
+            </pre>   
+            <pre class="layui-code layui-code layui-box layui-code-view" lay-title="js代码" lay-encode="false">
+<script type="text/javascript">
+    // 获取视频信息
+    var oVideo = document.querySelector('#video');
+    // 获取播放暂停按钮
+    var oStopToP = document.querySelector('.stopToP');
+    var oPlayToS = document.querySelector('.playToS');
+    // 获取时间
+    var oOverTime = document.querySelector('.overTime');
+    var oAllTime = document.querySelector('.allTime');
+    // 播放进度条
+    var oProgress = document.querySelector('.progressVideo');
+    var oOver = document.querySelector('.overVideo');
+    // 时间进度条
+    var oProgressA = document.querySelector('.progressAudio');
+    var oOverA = document.querySelector('.overAudio');
+    // 全屏
+    var ofullScreen = document.querySelector('.fullScreen');
+
+    // 所有视频播放（暂停）的前提条件就是视频可播放
+    oVideo.addEventListener('canplay',function(){
+        oVideo.removeEventListener('canplay', arguments.callee);
+        // 点击暂停按钮，它转化为播放按钮，视频同时播放（注意先判断视频的状态）
+        oStopToP.onclick = function(){
+            oVideo.play();
+            stopState();    
+        }
+        // 点击播放按钮，它转化为暂停按钮，视频同时停止（注意先判断视频的状态）
+        oPlayToS.onclick = function(){
+            oVideo.pause();
+            playState();
+        }
+        // 获取视频的总时间，传递给oAllTime中，注意时间转化为分秒的形式
+        oAllTime.innerHTML = timeT(oVideo.duration);
+        oVideo.addEventListener("timeupdate",function(){
+            oOverTime.innerHTML =timeT(oVideo.currentTime);
+            // 让视频的进度条随着时间的播放而走动
+            oOver.style.width = oVideo.currentTime/oVideo.duration*100+"%";
+        },false)
+        // 注意分析，当点击进度条上的任何一个地方需要，发生的变化：
+        // 1，进度条走到那里（通过offsetX事件可自动获取）
+        // 2，用当前时间(oVideo.currentTime)跳转到那里以控制视频也跳到那里,
+        // 不要赋值给oAllTime.innerHTML，因为它无法控制视频的播放，而且上面已经给过，
+        // 注意offsetX，获取的是你点击的这个物体的地方到它的最左边的距离用px表示，而我们设置用的是%类型
+        oProgress.addEventListener("click",function(event){
+            var x = event.offsetX;
+            var width = this.offsetWidth;
+            var scale = x/width;
+            oOver.style.width = scale*100+"%";
+            oVideo.currentTime = scale*oVideo.duration;
+        },false)
+        oProgressA.addEventListener("click",function(event){
+            var x = event.offsetX;
+            var width = this.offsetWidth;
+            var scale = x/width;
+            oOverA.style.width = scale*100+"%";
+            oVideo.volume = scale;
+        },false)
+        // 如果视频结束返回初始状态
+        oVideo.addEventListener('ended',function(){
+            this.currentTime=0;
+            playState();
+        },false)
+        // 全屏
+        ofullScreen.addEventListener("click",function(){
+            oVideo.webkitRequestFullScreen();
+        },false)
+    },false)
+    // 把时间转化成分秒的方式，用同一个变量来存放不同时期的值
+    function timeT(num){
+        var m = Math.floor(num/60);
+        var s = Math.floor(num%60);
+        m = m > 9 ? m : "0" + m;
+        s = s > 9 ? s : "0" + s;
+        return m + ":" + s;
+    }
+    // 播放状态
+    function playState(){
+        if(oVideo.paused){
+            oStopToP.style.display = "block";
+            oPlayToS.style.display = "none";
+
+        }
+    }
+    // 暂停状态
+    function stopState(){
+        if(!oVideo.paused){
+            oStopToP.style.display = "none";
+            oPlayToS.style.display = "block";s
+        }
+    }
+</script>
+            </pre>   
+            <!-- 代码编辑器完 -->
+            </section>
+        </article>
+        <!-- 分享 -->
+        <div id="nativeShare"></div>
+    </div>
+</body>
+<!-- 全局js -->
+    <script src="../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../layui/layui.all.js"></script>
+    <script src="../js/nativeShare.js"></script>
+    <script src="../js/public.js"></script>
+    <!-- 自定义js -->
+<script>
+    $(function(){
+        layui.use("code",function(){
+            layui.code({
+                encode: true,
+            });
+        })
+        $(".return_page").click(function(){
+            history.go(-1);
+        })
+        // var config = {
+        //     url:'http://blog.wangjunfeng.com',
+        //     title:'王俊锋的个人博客',
+        //     desc:'王俊锋的个人博客',
+        //     img:'http://www.wangjunfeng.com/img/face.jpg',
+        //     img_title:'王俊锋的个人博客',
+        //     from:'王俊锋的博客'
+        // };
+        // var share_obj = new nativeShare('nativeShare',config);
+    // $(window).on("pageshow",function(e){
+    // // 判断，如果存在我缓存的页面，则读取
+    // if(!e.persisted){
+    // _this.readFromPage();
+    // }
+    // })
+    // $(window).on("pagehide",function(e){
+    // // 如果没有页面缓存，我来缓存
+    // if(!e.persisted){
+    //  // 判断url是否是我需要的页面，然后读取。
+    // _this.cachePage();
+    // }
+    // })
+    })
+</script>
+</html>

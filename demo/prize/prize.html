@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>大转盘抽奖-wanderyun</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/prize.css">
+</head>
+<body>
+    <div class="content">
+        <section class="logo">
+            <img src="img/title-prize.png" alt="">
+        </section>
+        <section class="scroll-bar" id="scrollText">
+            <ul id="marquee">
+                <li>13*****8888&nbsp;赢取1000元大奖</li>
+                <li>13*****8888&nbsp;赢取1000元大奖</li>
+                <li>13*****8888&nbsp;赢取1000元大奖</li>
+                <li>13*****8888&nbsp;赢取1000元大奖</li>
+                <li>13*****8888&nbsp;赢取1000元大奖</li>
+            </ul>
+        </section>
+        <section class="turntable-prize">
+            <p>我的碎片：
+                <span>100</span>
+            </p>
+            <p>今日剩余次数：
+                <span>9</span>
+            </p>
+            <div class="rotate-prize">
+                <div class="pointer"><img src="img/pointer.png" alt="pointer"/></div>
+                <div class="rotate" ><img id="rotate" src="img/rotate.png" alt="turntable"/></div>
+            </div>
+            <div class="click-prize">
+                <a href="javascript:;" class="submit"><img src="img/submit.png" alt=""></a>
+            </div>
+            <div id="mark">
+                <img src="img/prize1000.png" class="red-img">
+            </div>
+        </section>
+        <section class="rule-prize">
+            <ul>
+                <li>1. 这里是说明，网址<a href="www.wanderyun.com">www.wanderyun.com</a></li>
+                <li>2. 如果你觉得不错就去github上下载源码吧</li>
+                <li>3. 记得在github上给个小心心</li>
+            </ul>
+            <p>页面展示归<span style="color: #ca4440">wander_yun</span>所有</p>
+        </section>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/awardRotate.js"></script>  
+    <script type="text/javascript" src="js/jquery.marquee.min.js"></script>    
+    <script type="text/javascript" src="js/prize.js"></script>  
+    <script>
+        document.body.oncopy =function(){
+            window.location.href='weixin://';       
+         }
+    </script>
+</body>
+</html>

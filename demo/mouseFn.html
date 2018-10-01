@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>touchstart和mousedown的兼容（事件属性不同，其他同理）</title>
+	<script src="../js/jquery.min.js?v=2.1.4"></script>
+</head>
+<body>
+	<p style="font-size: 60px;">注意：touchstart和mousedown的兼容（事件属性不同，其他同理）,请拖动鼠标并查看控制器看效果</p>
+	<script>
+		var hasTouch = 'ontouchstart' in window,
+	    startEvent = hasTouch ? 'touchstart' : 'mousedown',
+	    moveEvent = hasTouch ? 'touchmove' : 'mousemove',
+	    endEvent = hasTouch ? 'touchend' : 'mouseup',
+	    cancelEvent = hasTouch ? 'touchcancel' : 'mouseup';
+	    $(document).on(endEvent,function(e){
+	    	if(e.type == "touchstart" || e.type == "touchmove"){//移动端触摸事件中的开始和移动
+				console.log(e.originalEvent.touches[0].pageX);
+			}else if(e.type == "touchend"){//移动端触摸事件中的结束（和其他事件都不一样）
+				console.log(e.originalEvent.changedTouches[0].pageX);
+			}else{//pc端所有鼠标事件
+				console.log(e.pageX);
+			}
+	    });
+	</script>
+</body>
+</html>

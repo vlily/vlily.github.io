@@ -1,0 +1,78 @@
+{
+  "title": "mobile端crm", 
+  "id": "mCrm",   
+  "start": 0,   
+  "data": [      
+    {
+      "alt": "login",
+      "pid": 0, 
+      "src": "./img/userCenter/0.jpg",  
+      "thumb": ""   
+    },{
+      "alt": "会员中心",
+      "pid": 1, 
+      "src": "./img/userCenter/1.jpg",
+      "thumb": "" 
+    },{
+      "alt": "会员商城",
+      "pid": 2, 
+      "src": "./img/userCenter/2.jpg",
+      "thumb": "" 
+    },{
+      "alt": "我的订单",
+      "pid": 3, 
+      "src": "./img/userCenter/3.jpg",
+      "thumb": "" 
+    },{
+      "alt": "个人资料",
+      "pid": 4, 
+      "src": "./img/userCenter/4.jpg",
+      "thumb": "" 
+    },{
+      "alt": "资料详情1",
+      "pid": 5, 
+      "src": "./img/userCenter/5.jpg",
+      "thumb": "" 
+    },{
+      "alt": "资料详情2",
+      "pid": 6, 
+      "src": "./img/userCenter/6.jpg",
+      "thumb": "" 
+    },{
+      "alt": "积分列表",
+      "pid": 7, 
+      "src": "./img/userCenter/7.jpg",  
+      "thumb": ""   
+    },{
+      "alt": "卡券包",
+      "pid": 8, 
+      "src": "./img/userCenter/8.jpg",
+      "thumb": "" 
+    },{
+      "alt": "会员权益",
+      "pid": 9, 
+      "src": "./img/userCenter/9.jpg",
+      "thumb": "" 
+    },{
+      "alt": "订单详情",
+      "pid": 10, 
+      "src": "./img/userCenter/10.jpg",
+      "thumb": "" 
+    },{
+      "alt": "物流信息",
+      "pid": 11, 
+      "src": "./img/userCenter/11.jpg",
+      "thumb": "" 
+    },{
+      "alt": "会员活动",
+      "pid": 12, 
+      "src": "./img/userCenter/12.jpg",
+      "thumb": "" 
+    },{
+      "alt": "积分排行榜",
+      "pid": 13, 
+      "src": "./img/userCenter/13.jpg",
+      "thumb": "" 
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "title": "pc端全景后台管理系统", 
+  "id": "mCrm",   
+  "start": 0,   
+  "data": [      
+    {
+      "alt": "新建",
+      "pid": 0, 
+      "src": "./img/pcVR/all.jpg",  
+      "thumb": ""   
+    },{
+      "alt": "控制面板-模板",
+      "pid": 1, 
+      "src": "./img/pcVR/control1.jpg",
+      "thumb": "" 
+    },{
+      "alt": "控制面板-全景参数",
+      "pid": 2, 
+      "src": "./img/pcVR/control2.jpg",
+      "thumb": "" 
+    },{
+      "alt": "控制面板-h5参数",
+      "pid": 3, 
+      "src": "./img/pcVR/control3.jpg",
+      "thumb": "" 
+    },{
+      "alt": "全局设置",
+      "pid": 4, 
+      "src": "./img/pcVR/global.jpg",
+      "thumb": "" 
+    },{
+      "alt": "全局设置2",
+      "pid": 5, 
+      "src": "./img/pcVR/global1.jpg",
+      "thumb": "" 
+    }
+  ]
+}

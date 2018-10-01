@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>css3动画：animation城市动画</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="../layui/css/layui.css" rel="stylesheet">
+    <!-- <link href="../layui/css/layui.mobile.css" rel="stylesheet"> -->
+    <link href="../css/article.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/nativeShare.css"/>
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content  animated fadeInRight">
+        <nav class="nav_article clear">
+            <a class="return_page" href="javascript:;"><i class="layui-icon">&#xe65c;</i></a>
+            <a class="share_button" style="float: right;" href="javascript:;"><i class="layui-icon">&#xe641;</i></a>
+        </nav>
+        <article>
+            <h3>css3动画：animation城市动画</h3>
+            <section class="react_show">
+                <p>效果展示</p>
+                <img class="react_img" src="../img/css_animate.jpg" alt="">
+            </section>
+            <section class="react_show">
+                <p>demo链接下载(喜欢就送颗真心撒)：</p>
+                <a class="link_style" target="_blank" href="http://download.csdn.net/detail/vlilyv/9847217">css3动画：animation城市动画</a>
+            </section>
+            <section class="code_infor">
+            <!-- 代码编辑器 -->
+            <pre class="layui-code layui-code layui-box layui-code-view" lay-title="html代码" lay-encode="false">
+<div class="stage">
+    <div class="nightover"></div>
+    <div class="cloudSmall"></div>
+    <div class="cloudMedium"></div>
+    <div class="cloudLarge"></div>
+    <div class="rotation">
+        <div class="sun"></div>
+        <div class="moon"></div>
+    </div>
+    <div class="balloon"></div>
+    <div class="beans"></div>
+    <div class="skyline"></div>
+    <div class="groundBack"></div>
+    <div class="Glockenspiel"></div>
+    <div class="Planetarium"></div>
+    <div class="dowEventCenter"></div>
+    <div class="groundMid"></div>
+    <div class="friendshipShell"></div>
+    <div class="groundFront"></div>
+    <div class="groundMid"></div>
+    <div class="groundFront"></div>
+</div>
+
+            </pre>   
+            <pre class="layui-code layui-code layui-box layui-code-view" lay-title="css代码" lay-encode="false">
+*{margin: 0px;padding: 0px;}
+/*布置动画场景整体分析：云朵和热气球不规则运动，天空颜色变化随着太阳和月亮的变化而变化，
+第一阶段，太阳从正上方运动到正下方（同时月亮从正下方运动到正上方：正午12点到深夜12点，天空有2个变化12点到下午7点天空为天蓝色，下午7点到深夜12点是黑色）
+第二阶段，太阳从最下方运动到最上方（同时月亮从最上方运动到最下方）深夜12点到正午12点，
+天空颜色有3个变化深夜12点到早上5点天空为黑色，凌晨五点到8点为粉红色，早上8点到正午12点是蓝色
+总结在过一天，（太阳（月亮）转动一圈，自定义110s）天空颜色变化：天蓝色-黑色-黑色-粉红色-蓝色*/
+/*制作天空变色*/
+.stage{
+    position: relative;
+    height: 600px;
+    background: rgb(217,241,243);
+    overflow: hidden;
+    -webkit-animation: skyset 110s linear infinite normal;
+    -moz-animation: skyset 110s linear infinite normal;
+    -ms-animation: skyset 110s linear infinite normal;
+    -o-animation: skyset 110s linear infinite normal;
+}
+@keyframes skyset{
+    0%{background:rgb(217,241,243);}
+    23%{background:rgb(217,241,243);}
+    25%{background:#0f192c;}
+    50%{background:#0f192c;}
+    68%{background:#0f192c;}
+    75%{background: #f9c7b8;}
+    82%{background:rgb(217,241,243);}
+    100%{background:rgb(217,241,243);}
+}
+@-webkit-keyframes skyset{
+    0%{background:rgb(217,241,243);}
+    23%{background:rgb(217,241,243);}
+    25%{background:#0f192c;}
+    50%{background:#0f192c;}
+    68%{background:#0f192c;}
+    75%{background: #f9c7b8;}
+    82%{background:rgb(217,241,243);}
+    100%{background:rgb(217,241,243);}
+}
+@-moz-keyframes skyset{
+    0%{background:rgb(217,241,243);}
+    23%{background:rgb(217,241,243);}
+    25%{background:#0f192c;}
+    50%{background:#0f192c;}
+    68%{background:#0f192c;}
+    75%{background: #f9c7b8;}
+    82%{background:rgb(217,241,243);}
+    100%{background:rgb(217,241,243);}
+}
+
+@-o-keyframes skyset{
+    0%{background:rgb(217,241,243);}
+    23%{background:rgb(217,241,243);}
+    25%{background:#0f192c;}
+    50%{background:#0f192c;}
+    68%{background:#0f192c;}
+    75%{background: #f9c7b8;}
+    82%{background:rgb(217,241,243);}
+    100%{background:rgb(217,241,243);}
+}
+/*制作天空变色完*/
+/*制作太阳转动*/
+.rotation{
+    /*border: 1px solid red;*/
+    width: 700px;
+    height: 700px;
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -350px 0 0 -350px;
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    animation: rotation1 110s linear infinite normal;
+    -moz-animation: rotation1 110s linear infinite normal;
+    -ms-animation: rotation1 110s linear infinite normal;
+    -o-animation: rotation1 110s linear infinite normal;
+}
+@keyframes rotation1{
+    0%{-webkit-transform:rotate(45deg);}
+    100%{-webkit-transform:rotate(405deg);}
+}
+@-webkit-keyframes rotation1{
+    0%{-webkit-transform:rotate(45deg);}
+    100%{-webkit-transform:rotate(405deg);}
+}
+@-moz-keyframes rotation1{
+    0%{-webkit-transform:rotate(45deg);}
+    100%{-webkit-transform:rotate(405deg);}
+}
+@-o-keyframes rotation1{
+    0%{-webkit-transform:rotate(45deg);}
+    100%{-webkit-transform:rotate(405deg);}
+}
+.sun,.moon{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+.sun{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: yellow;
+}
+.moon{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: black;
+}
+/*制作太阳转动完*/
+/*当太阳落山时，所有的物体都会变得看不清，
+使用方法：加一个全局遮罩，控制透明度：亮-黑-亮*/
+.nightover{
+    position: absolute;
+    /*top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;*/
+    width: 100%;
+    height: 600px;
+    z-index: 9999;
+    background: rgba(15, 25, 44, 0.7);
+    opacity: 0;
+    -webkit-animation: set 110s infinite linear;
+    -moz-animation: set 110s infinite linear;
+    -o-animation: set 110s infinite linear;
+    animation: set 110s infinite linear;
+}
+ @-webkit-keyframes set {
+
+} 0% {
+ filter: Alpha(Opacity=0);
+ opacity: 0;
+}
+ 50% {
+ filter: Alpha(Opacity=100);
+ opacity: 1;
+}
+ 100% {
+ filter: Alpha(Opacity=0);
+ opacity: 0;
+}
+ @-moz-keyframes set {
+ 0% {
+ filter: Alpha(Opacity=0);
+ opacity: 0;
+}
+ 50% {
+ filter: Alpha(Opacity=100);
+ opacity: 1;
+}
+ 100% {
+ filter: Alpha(Opacity=0);
+ opacity: 0;
+}
+}
+ @-o-keyframes set {
+ 0% {
+ filter: Alpha(Opacity=0);
+ opacity: 0;
+}
+ 50% {
+ filter: Alpha(Opacity=100);
+ opacity: 1;
+}
+ 100% {
+ filter: Alpha(Opacity=0);
+ opacity: 0;
+}
+}
+ @keyframes set {
+ 0% {
+ filter: Alpha(Opacity=0);
+ opacity: 0;
+}
+ 50% {
+ filter: Alpha(Opacity=100);
+ opacity: 1;
+}
+ 100% {
+ filter: Alpha(Opacity=0);
+ opacity: 0;
+}
+}
+.cloudSmall{
+    position: absolute;
+    top: 20px;
+    width: 90px;
+    height: 50px;
+    z-index:2;
+    background: url(../img/cloudSmall.png) no-repeat;
+    -webkit-animation: cloudl 300s linear infinite normal;
+    -moz-animation: cloudl 300s linear infinite normal;
+    -ms-animation: cloudl 300s linear infinite normal;
+    -o-animation: cloudl 300s linear infinite normal;
+}
+.cloudMedium{
+    position: absolute;
+    top: 80px;
+    width: 159px;
+    height: 92px;
+    z-index: 2;
+    background: url(../img/cloudMedium.png) no-repeat center;
+    -webkit-animation: cloudl 180s linear infinite normal;
+    -moz-animation: cloudl 180s linear infinite normal;
+    -ms-animation: cloudl 180s linear infinite normal;
+    -o-animation: cloudl 180s linear infinite normal;
+}
+.cloudLarge{
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 302px;
+    height: 169px;
+    z-index: 4;
+    background: url(../img/cloudLarge.png) no-repeat center ;
+    -webkit-animation: cloudr 180s linear infinite normal;
+    -moz-animation: cloudr 180s linear infinite normal;
+    -ms-animation: cloudr 180s linear infinite normal;
+    -o-animation: cloudr 180s linear infinite normal;
+}
+.balloon{
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 157px;
+    height: 227px;
+    z-index: 10;
+    background: url(../img/balloon.png) no-repeat;
+    -webkit-animation: balloon1 50s linear infinite normal;
+    -moz-animation: balloon1 50s linear infinite normal;
+    -ms-animation: balloon1 50s linear infinite normal;
+    -o-animation: balloon1 50s linear infinite normal;
+}
+.beans{
+    position: absolute;
+    bottom: 30%;
+    right: 40%;
+    width: 88px;
+    height: 201px;
+    z-index: 3;
+    background: url(../img/beans.png) no-repeat ;
+}
+.skyline{
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 147px;
+    bottom: 26%;
+    background: url(../img/skyline.png) repeat-x;
+
+}
+.groundBack{
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 281px;
+    bottom: 0;
+    background: url(../img/groundBack.png) repeat-x;
+}
+.Planetarium{
+    position: absolute;
+    bottom: 20%;
+    left: 65%;
+    z-index: 10;
+    width: 347px;
+    height: 285px;
+    background: url(../img/Planetarium.png) no-repeat;
+}
+.dowEventCenter{
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    z-index: 10;
+    width: 520px;
+    height: 229px;
+    background: url(../img/dowEventCenter.png) no-repeat;
+}
+.Glockenspiel{
+    position: absolute;
+    bottom: 26%;
+    left: 40%;
+    width: 137px;
+    height: 263px;
+    z-index: 10;
+    background: url(../img/Glockenspiel.png) no-repeat;
+}
+.groundMid{
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    z-index: 10;
+    width: 827px;
+    height: 299px;
+    background: url(../img/groundMid.png) repeat-x;
+}
+.friendshipShell{
+    position: absolute;
+    bottom: 20%;
+    left: 22%;
+    z-index: 20;
+    width: 231px;
+    height: 370px;
+    background: url(../img/friendshipShell.png) no-repeat;
+}
+.groundFront{
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    z-index: 10;
+    width: 100%;
+    height: 299px;
+    background: url(../img/groundFront.png) no-repeat;
+}
+/*制作动画：*/
+
+@keyframes cloudl{
+    0%{left: -10%;}
+    20%{left:25%;}
+    40%{left: 45%;}
+    60%{left: 65%;}
+    80%{left: 85%;}
+    100%{left: 120%;}
+}
+@-webkit-keyframes cloudl{
+    0%{left: -10%;}
+    20%{left:25%;}
+    40%{left: 45%;}
+    60%{left: 65%;}
+    80%{left: 85%;}
+    100%{left: 120%;}
+}
+@-moz-keyframes cloudl{
+    0%{left: -10%;}
+    20%{left:25%;}
+    40%{left: 45%;}
+    60%{left: 65%;}
+    80%{left: 85%;}
+    100%{left: 120%;}
+}
+@-o-keyframes cloudl{
+    0%{left: -10%;}
+    20%{left:25%;}
+    40%{left: 45%;}
+    60%{left: 65%;}
+    80%{left: 85%;}
+    100%{left: 120%;}
+}
+@keyframes cloudr{
+    0%{right: -30%;}
+    20%{right:10%;}
+    40%{right: 35%;}
+    60%{right: 60%;}
+    80%{right: 85%;}
+    100%{right: 120%;}
+}
+@-moz-keyframes cloudr{
+    0%{right: -30%;}
+    20%{right:10%;}
+    40%{right: 35%;}
+    60%{right: 60%;}
+    80%{right: 85%;}
+    100%{right: 120%;}
+}
+@-webkit-keyframes cloudr{
+    0%{right: -30%;}
+    20%{right:10%;}
+    40%{right: 35%;}
+    60%{right: 60%;}
+    80%{right: 85%;}
+    100%{right: 120%;}
+}
+@-o-keyframes cloudr{
+    0%{right: -30%;}
+    20%{right:10%;}
+    40%{right: 35%;}
+    60%{right: 60%;}
+    80%{right: 85%;}
+    100%{right: 120%;}
+}
+@keyframes balloon1{
+    0%{right: -30%;-webkit-transform:rotate(0deg);}
+    20%{right:10%;-webkit-transform:rotate(5deg);}
+    40%{right: 35%;-webkit-transform:rotate(15deg);}
+    60%{right: 60%;-webkit-transform:rotate(30deg);}
+    80%{right: 85%;-webkit-transform:rotate(15deg);}
+    100%{right: 120%;-webkit-transform:rotate(0deg);}
+}
+@-moz-keyframes balloon1{
+    0%{right: -30%;-webkit-transform:rotate(0deg);}
+    20%{right:10%;-webkit-transform:rotate(5deg);}
+    40%{right: 35%;-webkit-transform:rotate(15deg);}
+    60%{right: 60%;-webkit-transform:rotate(30deg);}
+    80%{right: 85%;-webkit-transform:rotate(15deg);}
+    100%{right: 120%;-webkit-transform:rotate(0deg);}
+}
+
+@-webkit-keyframes balloon1{
+    0%{right: -30%;-webkit-transform:rotate(0deg);}
+    20%{right:10%;-webkit-transform:rotate(5deg);}
+    40%{right: 35%;-webkit-transform:rotate(15deg);}
+    60%{right: 60%;-webkit-transform:rotate(30deg);}
+    80%{right: 85%;-webkit-transform:rotate(15deg);}
+    100%{right: 120%;-webkit-transform:rotate(0deg);}
+}
+
+@-o-keyframes balloon1{
+    0%{right: -30%;-webkit-transform:rotate(0deg);}
+    20%{right:10%;-webkit-transform:rotate(5deg);}
+    40%{right: 35%;-webkit-transform:rotate(15deg);}
+    60%{right: 60%;-webkit-transform:rotate(30deg);}
+    80%{right: 85%;-webkit-transform:rotate(15deg);}
+    100%{right: 120%;-webkit-transform:rotate(0deg);}
+}
+
+            </pre>   
+            <!-- 代码编辑器完 -->
+            </section>
+        </article>
+        <!-- 分享 -->
+        <div id="nativeShare"></div>
+    </div>
+</body>
+<!-- 全局js -->
+    <script src="../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../layui/layui.all.js"></script>
+    <script src="../js/nativeShare.js"></script>
+    <script src="../js/public.js"></script>
+    <!-- 自定义js -->
+<script>
+    $(function(){
+        layui.use("code",function(){
+            layui.code({
+                encode: true,
+            });
+        })
+        $(".return_page").click(function(){
+            history.go(-1);
+        })
+        // var config = {
+        //     url:'http://blog.wangjunfeng.com',
+        //     title:'王俊锋的个人博客',
+        //     desc:'王俊锋的个人博客',
+        //     img:'http://www.wangjunfeng.com/img/face.jpg',
+        //     img_title:'王俊锋的个人博客',
+        //     from:'王俊锋的博客'
+        // };
+        // var share_obj = new nativeShare('nativeShare',config);
+    // $(window).on("pageshow",function(e){
+    // // 判断，如果存在我缓存的页面，则读取
+    // if(!e.persisted){
+    // _this.readFromPage();
+    // }
+    // })
+    // $(window).on("pagehide",function(e){
+    // // 如果没有页面缓存，我来缓存
+    // if(!e.persisted){
+    //  // 判断url是否是我需要的页面，然后读取。
+    // _this.cachePage();
+    // }
+    // })
+    })
+</script>
+</html>

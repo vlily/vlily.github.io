@@ -1,0 +1,1 @@
+$(".J_menuTabs .J_menuTab").contextmenu(function(a){var a=a||window.event;if(a.which=="3"){console.log("右键点击事件1")}});function getArticle(){$("a").click(function(){var b=window.location.href;var a=b.split("?");if(a[1]){$("#topNav").css({"opacity":"0","height":"0",});console.log($("#topNav").html())}else{console.log("不存在")}})};

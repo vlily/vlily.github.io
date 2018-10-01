@@ -1,0 +1,68 @@
+{
+  "title": "mobile端crm", 
+  "id": "mCrm",   
+  "start": 0,   
+  "data": [      
+    {
+      "alt": "login",
+      "pid": 0, 
+      "src": "./img/pc-crm/0.png",  
+      "thumb": ""   
+    },{
+      "alt": "主页",
+      "pid": 1, 
+      "src": "./img/pc-crm/1.png",
+      "thumb": "" 
+    },{
+      "alt": "销售操作台",
+      "pid": 2, 
+      "src": "./img/pc-crm/2.png",
+      "thumb": "" 
+    },{
+      "alt": "全国用户分布图",
+      "pid": 3, 
+      "src": "./img/pc-crm/3.png",
+      "thumb": "" 
+    },{
+      "alt": "地区用户分布图",
+      "pid": 4, 
+      "src": "./img/pc-crm/4.png",
+      "thumb": "" 
+    },{
+      "alt": "总用户报表",
+      "pid": 5, 
+      "src": "./img/pc-crm/5.png",
+      "thumb": "" 
+    },{
+      "alt": "客户分析表",
+      "pid": 6, 
+      "src": "./img/pc-crm/6.png",
+      "thumb": "" 
+    },{
+      "alt": "创建订单-智能化地址",
+      "pid": 7, 
+      "src": "./img/pc-crm/7.png",  
+      "thumb": ""   
+    },{
+      "alt": "canvas涂抹赢奖赛数据",
+      "pid": 8, 
+      "src": "./img/pc-crm/8.png",
+      "thumb": "" 
+    },{
+      "alt": "创建用户档案-选择分叉树",
+      "pid": 9, 
+      "src": "./img/pc-crm/9.png",
+      "thumb": "" 
+    },{
+      "alt": "每天数据表",
+      "pid": 10, 
+      "src": "./img/pc-crm/10.png",
+      "thumb": "" 
+    },{
+      "alt": "双十一活动当天动态增长图",
+      "pid": 11, 
+      "src": "./img/pc-crm/11.png",
+      "thumb": "" 
+    }
+  ]
+}
