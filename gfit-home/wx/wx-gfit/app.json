@@ -1,0 +1,50 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/knowledge/knowledge",
+    "pages/articlesList/articlesList",
+    "pages/article/article",
+    "pages/smallTarget/smallTarget",
+    "pages/logs/logs"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#FAFAFA",
+    "navigationBarTitleText": "Gfit",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance":50
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#05D291",
+    "borderStyle": "dark",
+    "list": [
+      {
+        "selectedIconPath": "pages/pic/index1.png",
+        "iconPath": "pages/pic/index.png",
+        "pagePath": "pages/index/index",
+        "text": "运动场"
+      },
+      {
+        "selectedIconPath": "pages/pic/smallTarget1.png",
+        "iconPath": "pages/pic/smallTarget.png",
+        "pagePath": "pages/smallTarget/smallTarget",
+        "text": "小目标"
+      },
+      {
+        "selectedIconPath": "pages/pic/knowledge1.png",
+        "iconPath": "pages/pic/knowledge.png",
+        "pagePath": "pages/knowledge/knowledge",
+        "text": "知识库"
+      }
+      
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

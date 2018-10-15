@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+    <meta name="Keywords" Content="Gfit gfit帮助与反馈 跑步机 智能">
+    <meta name="Description" Content="gfit帮助与反馈">
+    
+    <title>如何绑定跑步机</title>
+
+	<link rel="stylesheet" type="text/css" href="../../../src/css/resetMobile.css">
+	<link rel="stylesheet" type="text/css" href="../../../src/css/helpFeedback.css">    
+	<script type="text/javascript">
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?802227617ad3bc08fdaac31e183a57da";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</head>
+<body>
+	<div class="wapper">
+		<header class="clear">
+			<img class="icon-goback" src="../../../src/img/helpFeedback/icon-goback.png">
+			<h4 class="question-title">如何绑定跑步机</h4>
+		</header>
+		<article class="step-article article-content">
+		</article>
+		<footer class="answer-footer">
+			<div class="button-group">
+				<img class="button button-resolved" src="../../../src/img/helpFeedback/resolved.png">
+				<p class="button-title solved">已解决</p>
+			</div>
+			<div class="button-group">
+				<img class="button button-noResolved" src="../../../src/img/helpFeedback/noResolved.png">
+				<p class="button-title unsolved">未解决</p>
+			</div>
+		</footer>
+	</div>
+	<script src="../../../src/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var key = getValue()[0];
+			var userid = getValue()[1];
+			var title = decodeURI(decodeURI(getValue()[2]));
+			var reg = /^[\u3220-\uFA29]+$/;
+			// 英语
+			if(!reg.test(title)){
+				$('.solved').html('Solved')
+				$('.unsolved').html('Unsolved')
+			}
+			$('title').html(title)
+			$('.question-title').html(title)
+			console.log(key,userid)
+			$.ajax({
+				url:'https://dev.gfitgo.com/gfit-app-inf/web/question_answer/answer',
+				type:'GET',
+				data:{'key':key},
+				success:function(res){
+					console.log(res)
+					if(res.data){
+						$('.step-article').html(res.data)
+					}
+				},
+				fail:function(err){
+					console.log(err)
+					alert('服务器异常，请刷新重试！')
+				}
+			})
+			// 返回上一页
+			$('.icon-goback').on('click',function(){
+				history.go(-1)
+			})
+			$('.button-group .button').on("click",function(){
+				console.log($(this).attr('class'))
+				var attitude = 0;
+				if($(this).attr('class').indexOf('button-resolved')>-1){
+					// 已解决
+					attitude = 1;
+					$(this).attr('src','../../../src/img/helpFeedback/resolved1.png')
+					$('.button-noResolved').attr('src','../../../src/img/helpFeedback/noResolved.png')
+				}else{
+					// 未解决
+					attitude = 2;
+					$('.button-resolved').attr('src','../../../src/img/helpFeedback/resolved.png')
+					$(this).attr('src','../../../src/img/helpFeedback/noResolved1.png')
+				}
+				var data = {
+					  "key": key,
+					  "attitude": attitude,
+					  "user_id": userid
+					}
+				$.ajax({
+					url:'https://dev.gfitgo.com/gfit-app-inf/web/question_answer/feedback',
+					type:'POST',
+					dataType : 'json',
+					data:JSON.stringify(data),
+					contentType : 'application/json',
+					success:function(res){
+						console.log(res.data)
+					},
+					fail:function(err){
+						console.log(err)
+						alert('服务器异常，请刷新重试！')
+					}
+				})
+			})
+		})
+		function getValue(){
+			var urlValue = (window.location.search).replace(/\?/,'').split('&');
+			var valueArr = [];
+			for(var i = 0,len = urlValue.length;i < len;i++){
+				var urlItemValue = (urlValue[i].split('='))[1]
+				valueArr.push(urlItemValue);
+
+			}
+			return valueArr;
+		}
+	</script>
+</body>
+</html>

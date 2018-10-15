@@ -1,0 +1,28 @@
+<!--articlesList.wxml-->
+<view class="container">
+  <view class='content'>
+    <view class='content-head topacity clear' id='{{articlesBanner.id}}' style='background:url("{{articlesBanner.url}}") 0 -100rpx no-repeat;background-size:100% 140%;'>
+      <view class='content-headLeft'>
+        <text class='headLeft-title'>{{articlesBanner.name}}</text>
+        <text class='headLeft-englishTitle'>{{articlesBanner.cover_text}}</text>
+      </view> 
+    </view>
+    <view class='content-body clear'>
+      <view class='contentItem topacity clear' id='{{item.id}}' data-title='{{item.title}}' wx:for="{{articles}}" wx:key="{{item}}" bindtap='toArticle'>
+        <view class='contentItem-left' id='{{item.resource.id}}' style='background:url("{{item.resource.url}}") no-repeat;background-size:100% 100%;border-radius:10rpx;'>
+          <view class='contentItem-leftBg'></view>
+          <text class='contentItem-leftT'>阅读{{item.read_count}}次</text>
+        </view>  
+          <view class='contentItem-right'>
+          <text class='contentItem-rightT'>{{item.title}}</text>
+            <view class='contentItem-tags'>
+            <text class='contentItem-tag' wx:for="{{item.tags}}" wx:for-item="cell" wx:for-index="cellindex" wx:key="{{cellindex}}">{{cell.name}}</text> 
+          </view> 
+        </view>    
+      </view> 
+    </view>
+    <view class='loadmoreText'>
+      <text>{{loadmoreText}}</text>
+    </view>
+  </view>    
+</view>

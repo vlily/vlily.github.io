@@ -1,0 +1,7 @@
+
+ <view class="container">
+  <view class='content'>
+  <!--测试 https://dev.gfitgo.com/gfit-home/runTogether/index.html#w -->
+    <web-view class='webView' src="https://g.gfitgo.com/runTogether/index.html#w" ></web-view>
+  </view>
+</view> 

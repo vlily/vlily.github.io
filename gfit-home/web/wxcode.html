@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button class="btn" style="width: 200px;font-size: 50px;">获取用户信息</button>
+	<p>test</p>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		// $(function(){
+			var usertken = '36cb375402376cbda0f1186bf08a03afc7258048'
+			var dataJson = {
+				  "module": 1,
+				  "target_id": 641484,
+				  "target_user_id": 58263,
+				  "run_start_time": 1512129851
+				}
+				
+		$('.btn').click(function() {
+			$.ajax({
+				url: 'https://gotochitu.com/gfit-app-inf/app/version',
+				type: 'get',
+				dataType : 'json',	
+				beforeSend: function(request) {
+					request.setRequestHeader("Access-Control-Allow-Origin", '*');
+                    // request.setRequestHeader("X-Token", '615af4cb4091a297bb21b5f5a83357ed417ad41e');
+                },
+				success:function(res){
+					console.log(res.data)
+					alert(JSON.stringify(res.data))
+				},
+				fail:function(err){
+					console.log(err)
+					alert(err)
+				}
+			})
+			// $.ajax({
+			// 	url:'https://dev.gfitgo.com/gfit-app-inf/web/question_answer/question',
+			// 	type:'get',
+			// 	dataType : 'json',	
+			// 	beforeSend: function(request) {
+   //                  request.setRequestHeader("lang", 'en-us');
+   //              },
+		 //        success:function(res){
+			// 		console.log(res.data)				
+			// 	},
+			// 	fail:function(err){
+			// 		console.log(err)
+			// 		alert('服务器异常，请刷新重试！')
+			// 	}
+			// })
+		})
+		
+	</script>
+</body>
+</html>

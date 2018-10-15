@@ -1,0 +1,57 @@
+/**
+ * marathon.css
+ */
+/*public*/
+html,body{width: 100%;height: 100%;}
+body{min-height: 100%;max-height: 100%;}
+.material-design {
+	position: relative;
+}
+.material-design canvas {
+	border-radius: 25px;
+	opacity: 0.16;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+/*home*/
+.wapper{width: 100%;min-height: 100%;max-height: 100%;background: url(../img/marathon/home.jpg) no-repeat 0 0;background-size: 100% 100%;position: relative;}
+.content{position: absolute;top: 65%;left:8%; }
+.content .name-tip{font-size: 30px;zoom:0.5;margin: 32px 38px;}
+.content .btn-style{display: inline-block;text-align: center;width: 315px;height: 50px;line-height: 50px;outline: none;border: none;border-radius: 25px;font-size: 18px;}
+.content .input-name{text-align: center;margin-bottom: 20px;color: #000;}
+.content .toMatathon-btn{background:#FDE147;color: #171427;font-weight: 600;}
+.input-err::-webkit-input-placeholder{
+        color: red;
+}
+.input-err::-moz-placeholder{
+	color: red;
+}
+.input-err::-ms-placeholder{
+	color: red;
+}
+/*marathon*/
+.wapper2{width: 100%;height: 100%;position: relative;}
+.capture .top{padding-left: 25px;color: #fff; letter-spacing: 2px;}
+.capture .top .top-place{padding-top:46px;font-size: 24px;}
+.capture .top .top-spell{font-size: 15px;letter-spacing: 0px;}
+.capture .top .top-title{font-size: 18px;}
+.capture .custom-content{margin: 56px 60px 0 60px;}
+.capture .custom-content .custom-text{font-size: 24px;line-height: 34px;font-weight: 500;color: #fff;text-align: center;}
+.capture .custom-content .custom-name{font-size: 25px;font-family: PingFangSC-Regular, sans-serif;color: #fff;text-align: right;margin-top: 10px;}
+.custom-nameBefore{display: inline-block;width:50px;height: 3px;border-bottom: 2px solid #fff;vertical-align: super;}
+.capture .ad{position: fixed;left: 0;bottom: 0;background:rgba(0,0,0,.88);width: 100%;height: 96px;padding-top: 20px;}
+.ad .ad-left,.ad .ad-right{float: left;display: inline-block;text-align: center;}
+.ad .ad-left{width: 39%;text-align: right;}
+.ad .ad-left img{width: 130px;display: inline-block;}
+.ad .ad-right{width: 61%;float: right;}
+.ad .ad-right p{color: #fff;}
+.ad .ad-right p:nth-child(1){font-size: 24px;zoom:0.5;}
+.ad .ad-right p:nth-child(2){font-size: 28px;zoom:0.5;}
+.ad .ad-right p:nth-child(3){font-size: 18px;zoom:0.5;transform: scale(0.7);color: rgba(255,255,255,.6);}
+.handle{width: 100%;position: absolute;left: 0;bottom: 21%;text-align: center;}
+.handle-infor{color: #fff;font-size: 15px;margin-top: 10px;display: inline-block;}
+.handle .handle-btn{border: none;width: 131px;height: 44px;border-radius: 22px;background: #fff;font-weight: 700;}
+.handle .saveImg{background:#FDE147;}
+.handle-fingerprint{width:46px;margin-left: 10px;}
+.getImg{width: 100%;}
