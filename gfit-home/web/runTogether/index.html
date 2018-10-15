@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+    <meta name="Keywords" Content="Gfit一起跑 Gfit 赤兔运动 赤兔天猫">
+    <meta name="Description" Content="Gfit一起跑">
+
+	<title>一起跑</title>
+	<link rel="stylesheet" type="text/css" href="../src/css/resetMobile.css">
+	<link rel="stylesheet" type="text/css" href="../src/css/runTogether.css">
+	<script type="text/javascript">
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?802227617ad3bc08fdaac31e183a57da";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</head>
+<body>
+	<div id="app" v-cloak>
+		<!-- <div class="test" ref='test' style="height: 200px;line-height: 200px;">{{nowuserToken}}</div> -->
+		 <!-- && prodDUrl -->
+		<div v-if='isErr'><img class="errUserToken" src="../src/img/runTogether/err.png"></div>
+  		<div v-else class='content clear'>
+		    <div class='nav'>
+		      <div class='tab-item nav-content' v-for="(item, index) in nav" :id='index' v-on:click='swichNav(index)'>
+		        <span class='nav-text' :class='{"active":currentTab == index}' >{{ item }}</span>
+		        <span class='textBorder' v-if='currentTab == index'></span>
+		      </div>
+		    </div>
+	     	<div class='tab-content' >
+		        <div class="running" v-show='currentTab == 0' >
+			        <div class='tab-playground clear' id='tabPlayground' :class='{"tab-playgroundNo":!isBody}'>
+			        	<div class="playground-trackImg">
+			        		<img class='playground-track' ref='playgroundTrack' id='playgroundTrack' style='width: 6.9rem;height: 3.45rem;' src='../src/img/runTogether/playground.png' > 
+			        		<div class="trackborder"></div> 
+			        		<img class='trackImg' ref='trackImg' :id='index' :src="item.img" :onerror="urlAvator" v-for="(item, index) in userList">
+			        		<canvas ref='myCanvas' class='myCanvas'>版本过低,请升级浏览器</canvas>
+			        	</div>
+			          <span class='playground-userNum' v-if='isBody'>{{ runnerAll }}</span>
+			          <span class='playground-userP' :class='{"playground-usernoneP":!isBody}'>{{ playgroundUserP }}</span>
+			        </div>
+			        <div class="tabContentScroll" ref='tabContentScroll'>
+				        <div class="scrollItem">
+						    <div class="top-tip" v-if='reFresh'>
+						    	<span class="refresh-hook"></span>
+					    		<span class="refresh-hook"></span>
+					    		<span class="refresh-hook"></span>
+						    </div>
+					        <div class='tab-userList tab-userListScroll' >
+					          <div v-if='isBody'>
+					            <div v-if='userList.length>0'>
+					              	<div class='tab-userList-item tab-userList-item1 clear' v-for="(item, index) in userList">
+										<div class='itemLeft' :data-userId='item.user_id' :data-runJournalId='item.run_journal_id' :data-runStartTime='item.run_start_time' v-on:click='getModule'>
+											<img class='user-avatar' :src='item.img' :onerror="urlAvator"> 
+											<span class='user-name'>{{ item.nickname }}</span>
+										</div>
+										<div class='itemCenter'>
+											<div class='itemCenter-infor clear'> 
+											<div class='infor-top'>
+												<span class='infor-speed infor-speed1' v-if='item.speed >= 6 && item.speed <= 8.9'>{{ item.speed }}</span>
+												<span class='infor-speed infor-speed2' v-else-if='item.speed>=9'>{{ item.speed }}</span>
+												<span class='infor-speed' v-else>{{ item.speed }}</span>
+												<span class='infor-unit'>公里/时</span>
+											</div>
+											<div class='infor-bottom'>
+												<span class='infor-duration'>{{ item.duration }}</span>
+												<span class='infor-distance'>{{ item.distance | toFix }}公里</span>
+											</div>
+											</div>
+										</div>  
+										<div class='itemRight' :id = 'index' :data-userId='item.user_id' :data-runJournalId='item.run_journal_id' :data-runStartTime='item.run_start_time' v-on:click="getParise($event);"> 
+											<span class='praise-num' :class='{"praise-numActive" : item.is_praise==1}' v-if='item.praise_count<99'>{{ item.praise_count }}</span>
+											<span class='praise-num ' :class='{"praise-numActive" : item.is_praise==1}' v-else>99+</span> 
+											<img class='praise-img' v-if='item.is_praise == 1' src='../src/img/runTogether/praise1.png' >
+											<img class='praise-img' v-else src='../src/img/runTogether/praise.png' >
+										</div>
+					              	</div> 
+					            </div>
+					            <div v-else>
+					              <div class='nobody-text nobodyRunner-text'>加载中...</div>
+					            </div>
+					          </div>
+					          <div v-else>
+					            <div class='nobody'>
+					              <img class='nobody-img' src='../src/img/runTogether/nobody.png'>
+					            </div>
+					          </div>
+					        </div>
+					        <div class="bottom-tip" v-if='more'>
+						    	<p>加载中...</p>
+						    </div>
+				        </div>
+			        </div>
+			    </div>
+			    <div class="tabContentScroll2" ref='tabContentScroll1'>
+			        <div class="scrollItem2">
+					    <div class="top-tip" v-if='reFreshFinish'>
+					    	<span class="refresh-hook"></span>
+					    	<span class="refresh-hook"></span>
+					    	<span class="refresh-hook"></span>
+					    </div>
+				      	<div class="runningFinish" v-show='currentTab == 1'>
+					        <div class='tab-userList tab-userListFinish'>
+					          <div v-if='userListFinish.length>0'>
+					            <div class='tab-userList-item tab-userListFinish-item' v-for="(item, index) in userListFinish" >
+					              <span class='item-finishTime'>{{ item.endToNowTime }}</span>
+					              <div class='itemLeft' :id = 'index' :data-userId='item.user_id' :data-recordId='item.record_id' :data-runStartTime='item.run_start_time' v-on:click='getModuleFinish'>
+					                <img class='user-avatar' :src='item.img' :onerror="urlAvator">
+					                <div class='user-infor'>
+					                  <span class='user-name user-nameFinish'>{{ item.nickname }}</span>
+					                  <span class='user-localtion' v-if="item.user_addr">{{ item.user_addr }}</span>
+					                </div>
+					              </div>
+					              <div class='itemCenter'>
+					                <div class='itemCenter-infor clear'> 
+					                  <div class='infor-top'>
+					                    <span class='infor-duration inforFinish'>{{ item.duration }}</span>
+					                    <span class='infor-distance inforFinish'>{{ item.distance }}公里</span>
+					                  </div>
+					                  <div class='infor-bottom'>  
+					                    <span class='infor-unit infor-unitName'>{{ item.plan_name }}</span>
+					                    <span class='infor-unit infor-order' v-if='item.order>=0 && item.plan_type!=0 && item.plan_type!=4 && item.plan_type!=5'>第{{ item.order }}课</span>
+					                  </div>
+					                </div>
+					              </div>  
+					              <div class='itemRight' :id = 'index' :data-userId='item.user_id' :data-recordId='item.record_id' :data-runStartTime='item.run_start_time' @click="getPariseFinish($event)"> 
+					                  <span class='praise-num' :class='{"praise-numActive" : item.is_praise==1}' v-if='item.praise_count<99'>{{ item.praise_count }}</span>
+					                  <span class='praise-num' :class='{"praise-numActive" : item.is_praise==1}' v-else>99+</span>  
+					                  <img class='praise-img' v-if='item.is_praise == 1' src='../src/img/runTogether/praise1.png' >
+					                  <img class='praise-img' v-else src='../src/img/runTogether/praise.png' >
+					                </div>
+					            </div>
+					          </div>  
+					          <div v-else>
+					            <div class='nobody'>
+					              <div class='nobody-text'>加载中...</div>
+					            </div>
+					          </div>
+					        </div> 
+				      	</div>
+				      	<div class="bottom-tip" v-if='moreFinish'>
+					    	<p>加载中...</p>
+					    </div>
+				    </div>
+				</div>
+	    	</div> 
+	  	</div>  
+	</div>
+	<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script> 
+	<script src="https://cdn.bootcss.com/vue-resource/1.5.1/vue-resource.min.js"></script>
+	<script src="https://unpkg.com/better-scroll/dist/bscroll.min.js"></script>
+	<script type="text/javascript" src="../src/js/aliyun-oss-sdk.min.js"></script>
+	<script type="text/javascript" src="../src/js/runTogether.js"></script>
+</body>
+</html>

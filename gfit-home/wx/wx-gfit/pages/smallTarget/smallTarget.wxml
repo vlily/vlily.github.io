@@ -1,0 +1,51 @@
+
+ <view class="container">
+  <view class='content'>
+    <view class='content-top'>
+      <view class='top-infor clear'>
+        <view class='top-inforLeft topacity'>
+          <text class='top-inforLeftP0'>{{smallTargetData.goal}}</text>
+          <text class='top-inforLeftP1'>即可瓜分奖金</text>
+          <text class='top-inforLeftP2'>{{smallTargetData.active_time}}</text>
+        </view>
+        <view class='top-inforRight'>
+          <image mode='widthFix' class='top-inforRightImg' src='../pic/smallTarget/icon-top.png'></image>
+        </view>
+      </view>
+      <view class='top-content' >
+        <view class='bgcircle tobottom'></view>
+        <view class='content-text'>
+          <text class='top-contentP'>本期可瓜分奖金</text>
+          <view class='top-contentMoney'>
+            <text class='top-contentMoneyP'>￥</text>
+            <!-- {{nowData}} -->
+            <text class='top-contentMoneyP'>{{nowData}}</text>
+          </view>
+          <text class='top-contentText'>{{smallTargetData.title}}\n{{smallTargetData.button}}</text>
+        </view>
+      </view>
+      <view class='top-notice'>
+        <swiper class='notice-swiper' interval='3000' autoplay="true" vertical='true' circular='false'  >
+          <block wx:for="{{scrollList}}" wx:key="{{item}}">
+            <swiper-item catchtouchmove='catchTouchMove'>
+              <text class='top-noticeP'>{{item.name}}刚刚参加了一周小目标</text>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view> 
+    </view>
+    <view class='content-body'>
+      <text class='body-title'>{{smallTargetData.participant_count}}人已参加，{{smallTargetData.complete_count}}人已完成</text>
+      <view class='body-content'>
+        <block wx:for='{{userAvatarList}}' wx:key="{{item}}">
+          <image mode='widthFix' class='user-avatar topacity' data-index='{{index}}' binderror='errImg' src="{{item}}"></image>
+        </block>
+      </view>
+    </view>
+    <view class='content-bottom topacity'>
+      <text class='bottom-title'>详细规则</text>
+      <text class='bottom-rules'>{{smallTargetData.rules}}</text>
+    </view>
+  </view>
+</view> 
+ 

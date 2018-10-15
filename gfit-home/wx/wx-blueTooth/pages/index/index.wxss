@@ -1,0 +1,64 @@
+/**index.wxss**/
+.content,.container{width: 100%;height: 100%;position: relative;background: #F3F9F9;text-align: center;}
+
+/* public */
+.pages{position: relative;height: 100%;}
+view,text{letter-spacing: 2rpx;}
+.btn-shade{padding:32rpx 160rpx;background-image:-webkit-linear-gradient(0deg, #05D38E, #2CC8BB);box-shadow:0rpx 4rpx 20rpx rgba(0, 0, 0, .3);border-radius:60rpx;color:#fff;font-size:36rpx;}
+.btn-default{color: #31CABD;border: 2rpx solid #31CABD;padding: 20rpx 60rpx;font-size: 28rpx;border-radius: 60rpx;}
+.btn-green{background: #05D38E;padding: 32rpx 100rpx;font-size: 32rpx;border-radius: 60rpx;color: #fff;}
+.btn-defaultGreen{font-size: 32rpx;border-radius: 60rpx;color: #05D38E;padding: 32rpx 100rpx;border: 2rpx solid #05D38E;}
+
+.dotting {
+    display: inline-block; width: 10px; min-height: 2px;
+    padding-right: 2px;
+    border-left: 2px solid currentColor; border-right: 2px solid currentColor;   
+    background-color: currentColor; background-clip: content-box;
+    box-sizing: border-box;
+    animation: dot 4s infinite step-start both;
+}
+.dotting:before { content: '...'; } 
+.dotting::before { content: ''; }
+:root .dotting { margin-left: 2px; padding-left: 2px; } 
+
+@keyframes dot {
+    25% { border-color: transparent; background-color: transparent; }          
+    50% { border-right-color: transparent; background-color: transparent; }   
+    75% { border-right-color: transparent; }                                
+}
+/* initBluetooth */
+.top{padding:200rpx 0 120rpx 0;}
+.icon1{width: 276rpx;height: 276rpx; }
+.article{color: #333333;font-size: 36rpx;font-weight:700;}
+.bottom{margin-top: 158rpx;display: inline-block;}
+.bottom:hover{box-shadow:none;}
+
+/* stepBluetooth */
+/* .stepBluetooth{position: relative;display: inline-block;width: 100%;text-align: center;position: relative;} */
+.stepBluetooth-top{display: inline-block;width: 398rpx;height: 398rpx;margin: 120rpx 0 80rpx 0;position: relative;}
+.stepMove,stepMove1{position: absolute;top:0rpx;right: -500rpx;opacity: 0;}
+.icon2{width: 398rpx;height: 398rpx;}
+.bottom-stepBluetooth{margin-top: 280rpx;}
+.stepBluetooth-progress{position: absolute;top:27%;left: 50%;transform: translateX(-50%);color:#31CABD;font-size: 52rpx;font-weight: 700; }
+
+/* noBluetooth */
+.noBluetooth-top{padding: 160rpx 0 80rpx 0;}
+.icon-noBluetooth{width: 116rpx;height: 120rpx;margin-bottom: 40rpx;}
+.infor-message{width: 64%;text-align: left;margin: 0 auto;}
+.infor-messageP{font-size: 26rpx;color: #999999;line-height: 36rpx;}
+.marginBottom{margin-bottom: 32rpx;}
+.bottom-noBluetooth{width: 200rpx;position: absolute;left: 50%;transform: translateX(-50%);bottom: 20%;}
+
+/* statusBluetooth */
+.statusBluetooth-top{padding: 60rpx 0 60rpx 0;}
+.icon-statusBluetooth{width: 312rpx;height:240rpx ;margin-bottom: 20rpx;}
+.infor-statusBluetooth1{width: 65%;}
+.infor-statusBluetooth2{width: 84%;}
+.infor-messageStatusP{font-size: 24rpx;}
+.centerP{text-align: center;}
+
+/* faliBluetooth */
+.faliBluetooth{background: #fff;width: 100%;height: 100%;}
+.faliBluetooth-top{padding:94rpx 0 80rpx 0;}
+.icon-faliBluetooth{margin-bottom:24rpx;}
+.bottom-faliBluetooth{margin-top:150rpx;}

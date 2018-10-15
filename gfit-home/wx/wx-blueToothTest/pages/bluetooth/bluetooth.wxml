@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  <text bindtap="startConnect">连接蓝牙</text>
+</view>
