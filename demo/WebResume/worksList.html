@@ -65,7 +65,7 @@
                         <a href="http://jjt-store.oss-cn-hangzhou.aliyuncs.com/app/version/android/app-release.apk" target="_blank">U家圈（聚合商城）</a><span class="layui-badge layui-bg-blue">app H5</span>
                         <br><a href="https://www.ujiaquan.com/store/web/wx/#/pages/wisdomHealth/index/index" target="_blank">智慧康养商城</a><span class="layui-badge">基于微信公众号</span>
                         <br><a href="https://wx.jiajiatonghuo.cn/store/web/jjt-h5-zpMall/#/pages/zpMall/index/index" target="_blank">臻品mall</a><span class="layui-badge">1080*1920机器</span>
-                        <br><a href="https://wx.jiajiatonghuo.cn/store/web/jjt-h5-zpMall/#/pages/zpMall/index/index" target="_blank">家家通后台</a><span class="layui-badge layui-bg-green">基于vue的管理系统</span>
+                        <br><a href="https://wx.jiajiatonghuo.cn/store/manager/index.html#/login" target="_blank">家家通后台</a><span class="layui-badge layui-bg-green">基于vue的管理系统</span>
                         <br><a class="photosBtn" href="http://ha.jiajiatonghuo.com/ha/web/index.html#/login" target="_blank">医养大联盟</a><span class="layui-badge">基于微信公众号</span>
                         <br><a class="photosBtn" data-method="xcxUhome" href="javascript:;" target="_blank">优家圈商城</a><span class="layui-badge layui-bg-blue">小程序</span>
                         <br><a class="photosBtn" data-method="xcxJyh" href="javascript:;" target="_blank">家云斛</a><span class="layui-badge layui-bg-blue">小程序</span>
@@ -186,8 +186,16 @@
 				}
 				if(method=="h5-runtogether"){
 			    	active.showPhotos('./img/h5-runtogether.json');
+                }
+                if(method=="xcxUhome"){
+			    	active.showPhotos('./img/xcxUhome.json');
 				}
-				
+				if(method=="xcxJyh"){
+			    	active.showPhotos('./img/xcxJyh.json');
+                }
+                if(method=="xcxM"){
+			    	active.showPhotos('./img/xcxM.json');
+				}
 			  });
 			// $(".layui-layer-phimg img").on("click",function(){
 			// 	console.log(124)
