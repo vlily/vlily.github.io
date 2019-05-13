@@ -1,1 +1,13 @@
-sss
+{
+  "title": "家嘉通", 
+  "id": "mCrm",   
+  "start": 0,   
+  "data": [      
+    {
+      "alt": "优家圈小程序体验码",
+      "pid": 0, 
+      "src": "./img/jjt/uHome.jpg",  
+      "thumb": ""   
+    }
+  ]
+}
