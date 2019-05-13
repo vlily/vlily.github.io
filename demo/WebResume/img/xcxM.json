@@ -1,1 +1,13 @@
-第三方
+{
+  "title": "家嘉通", 
+  "id": "xcxM",   
+  "start": 0,   
+  "data": [      
+    {
+      "alt": "机器页面",
+      "pid": 0, 
+      "src": "./img/jjt/m.jpg",  
+      "thumb": ""   
+    }
+  ]
+}
