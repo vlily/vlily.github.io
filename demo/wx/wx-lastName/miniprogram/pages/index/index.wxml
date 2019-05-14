@@ -1,0 +1,75 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+    ></button>
+    <view>
+      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+    </view>
+  </view>
+
+
+  <!-- 上传图片 -->
+  <view class="uploader">
+    <view class="uploader-text" bindtap="doUpload">
+      <text>上传图片</text>
+    </view>
+    <view class="uploader-container" wx:if="{{imgUrl}}">
+      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+  </view>
+
+
+  <!-- 操作数据库 -->
+  <view class="uploader">
+    <navigator url="../databaseGuide/databaseGuide" open-type="navigate" class="uploader-text">
+      <text>前端操作数据库</text>
+    </navigator>
+  </view>
+
+  <!-- 新建云函数 -->
+  <view class="uploader">
+    <navigator url="../addFunction/addFunction" open-type="navigate" class="uploader-text">
+      <text>快速新建云函数</text>
+    </navigator>
+  </view>
+  <!-- 自定义调用云函数 -->
+  <view class="uploader">
+    <button class="userinfo-nickname" bindtap="arthurSlog_getInfo">点击向云端发起请求</button>
+  </view>
+
+  <!-- 自定义调用云函数 -->
+  <view class="uploader">
+    <button class="userinfo-nickname" bindtap="arthurSlog_getInfoAdd">发送data到后端返回和</button>
+  </view>
+
+  <!--用户 openid -->
+  <view class="userinfo">
+    <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
+    <open-data type="userNickName" lang="zh_CN"></open-data>
+    <open-data type="groupName" open-gid="xxxxxx" lang="zh_CN"></open-data>
+  </view>
+
+  <!-- 操作数据库（登录验证） -->
+  <view class="uploader">
+    <button class="userinfo-nickname" bindtap="arthurSlog_readingBook">我要读书（每次加1点智力值）</button>
+  </view>
+  <view class="showOpenid">
+    <text class="textOpenid" wx:if="{{user_dbFlag}}">{{user_nickName}} 的IQ值：{{page_iq}}</text>
+  </view>
+
+   <!-- 上传图片 -->
+  <view class="uploader">
+    <button class="userinfo-nickname" bindtap="arthurSlog_uploadImg">上传图片</button>
+  </view>
+  <!-- 显示图片 -->
+  <view>
+    <image class="img" src="{{imagePath}}" mode="widthFix"></image>
+  </view>
+</view>
