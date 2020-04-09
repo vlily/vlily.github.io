@@ -39,17 +39,6 @@ function getCurrentPageUrlWithArgs() {
 
   return urlWithArgs
 }
-// function getDataFormOss(){
-//   // aliyunOssJS
-//   var client = new OSS({
-//     region: "oss-cn-hangzhou",
-//     accessKeyId: "WMD6uv73gL0qNAyL",
-//     accessKeySecret: "QQ2aiWUNixcOnueKnxKdk0hDOJhJU6",
-//     bucket: "gfit-test"
-//   });
-//   var imgsrc = client.signatureUrl("profile_img/100/preview")
-//   console.log(client.signatureUrl("profile_img/100/preview"), client.signatureUrl("profile_img/256/preview"))
-// }
 
 module.exports = {
   formatTime: formatTime,
