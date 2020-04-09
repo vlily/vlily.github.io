@@ -1,6 +1,0 @@
-<!--sport.wxml-->
-<view class="container">
-  <view class='content'>
-    <web-view id='{{article.articleId}}' src="{{article.url}}" ></web-view>
-  </view>
-</view>
